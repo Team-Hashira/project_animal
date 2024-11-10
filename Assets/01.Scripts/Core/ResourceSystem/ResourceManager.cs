@@ -1,7 +1,7 @@
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
 
-public class ResourceManager : MonoBehaviour
+public class ResourceManager : MonoSingleton<ResourceManager>
 {
     [SerializeField] private SerializedDictionary<EResourceType, int> _resourceCountDict;
 
