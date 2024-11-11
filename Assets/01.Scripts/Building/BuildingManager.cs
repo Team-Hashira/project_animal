@@ -20,6 +20,8 @@ public class BuildingManager : MonoBehaviour
         if (isContain)
             _curBuildings.Remove(building);
 
+        Destroy(building);
+
         return isContain;
     }
 }
