@@ -1,19 +1,23 @@
 using UnityEngine;
 
-public class UnitState
+public class UnitState<T> : UnitStateBase where T : Unit
 {
-    protected Unit _owner;
-    protected StateMachine _stateMachine;
+    protected T _owner;
 
     private readonly int _AnimationHash;
 
-    public UnitState(Unit owner, StateMachine stateMachine, string animationName)
+    public UnitState(T owner, StateMachine stateMachine, string animationName)
     {
         _owner = owner;
         _stateMachine = stateMachine;
 
         _AnimationHash = Animator.StringToHash(animationName);
     }
+}
+
+public class UnitStateBase
+{
+    protected StateMachine _stateMachine;
 
     public virtual void Enter() { }
     public virtual void Update() { }

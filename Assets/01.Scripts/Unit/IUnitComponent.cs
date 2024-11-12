@@ -1,9 +1,9 @@
-public interface IUnitInitializeComponent
+public interface IUnitComponent
 {
     public void Initialize(Unit unit);
 }
 
-public interface IUnitAfterInitComponent
+public interface IUnitAfterInitComponent : IUnitComponent
 {
     public void AfterInit();
 }

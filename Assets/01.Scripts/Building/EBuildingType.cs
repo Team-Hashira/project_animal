@@ -2,5 +2,5 @@ using UnityEngine;
 
 public enum EBuildingType
 {
-	None = 0,
+	MainControl = 0,
 }

@@ -7,5 +7,5 @@ public enum EPlayerState
 
 public class Player : Unit
 {
-
+    [field:SerializeField] public InputReaderSO Input { get; private set; }
 }

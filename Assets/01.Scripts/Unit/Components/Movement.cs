@@ -2,13 +2,13 @@ using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class UnitMovement : MonoBehaviour, IUnitInitializeComponent
+public class Movement : MonoBehaviour, IUnitComponent
 {
     private InputReaderSO _input;
     private Rigidbody2D _rigid;
     private Unit _owner;
 
-    public Vector2 Movement { get; private set; }
+    private Vector2 _movement;
 
     [SerializeField] private float _speed = 10;
 
@@ -20,16 +20,16 @@ public class UnitMovement : MonoBehaviour, IUnitInitializeComponent
 
     private void FixedUpdate()
     {
-        _rigid.linearVelocity = Movement;
+        _rigid.linearVelocity = _movement;
     }
 
     public void Move(Vector2 vector)
     {
-        Movement = vector.normalized * _speed;
+        _movement = vector.normalized * _speed;
     }
 
     public void StopImmediate()
     {
-        Movement = Vector2.zero;
+        _movement = Vector2.zero;
     }
 }

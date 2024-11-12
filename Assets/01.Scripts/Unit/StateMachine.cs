@@ -7,16 +7,15 @@ using UnityEngine.UIElements;
 public class StateMachine
 {
     public Unit _owner;
-    public UnitState CurrentState => _stateDictionary[_currentStateEnum];
 
-    private Dictionary<Enum, UnitState> _stateDictionary;
-    public Enum _currentStateEnum;
+    private Dictionary<Enum, UnitStateBase> _stateDictionary;
+    public Enum CurrentStateEnum { get; private set; }
 
     public StateMachine(Unit owner)
     {
         _owner = owner;
 
-        _stateDictionary = new Dictionary<Enum, UnitState>();
+        _stateDictionary = new Dictionary<Enum, UnitStateBase>();
 
         string unitName = _owner.name;
         Type unitStateEnumType = Type.GetType("E" + unitName + "State");
@@ -33,27 +32,29 @@ public class StateMachine
             Type unitState = Type.GetType(unitName + enumName + "State");
             try
             {
-                UnitState state = Activator.CreateInstance(unitState, _owner, this, enumName) as UnitState;
+                UnitStateBase state = Activator.CreateInstance(unitState, _owner, this, enumName) as UnitStateBase;
                 _stateDictionary.Add(item, state);
-                if (_currentStateEnum == null)
-                    _currentStateEnum = item;
+                if (CurrentStateEnum == null)
+                    CurrentStateEnum = item;
             }
             catch (Exception e)
             {
                 Debug.LogError($"No class [ {unitName + item.ToString()}State ]");
             }
         }
+
+        _stateDictionary[CurrentStateEnum].Enter();
     }
 
     public void MachineUpdate()
     {
-        CurrentState.Update();
+        _stateDictionary[CurrentStateEnum].Update();
     }
 
     public void ChangeState(Enum stateEnum)
     {
-        CurrentState.Exit();
-        _currentStateEnum = stateEnum;
-        CurrentState.Enter();
+        _stateDictionary[CurrentStateEnum].Exit();
+        CurrentStateEnum = stateEnum;
+        _stateDictionary[CurrentStateEnum].Enter();
     }
 }
