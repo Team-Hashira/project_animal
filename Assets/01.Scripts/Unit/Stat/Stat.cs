@@ -27,9 +27,9 @@ public class Stat : MonoBehaviour
 {
     [SerializeField] private StatSO _stat;
 
-    public StatElement this[EStatType statType]
+    public StatElement GetElement(EStatType statType)
     {
-        get => _stat.GetStatElement(statType);
+        return _stat.GetStatElement(statType);
     }
 
     public float GetValue(EStatType statType)

@@ -15,7 +15,7 @@ public class StatElement
         _baseValue = baseValue;
     }
 
-    public float GetValue()
+    public int GetValue()
     {
         //덧셈 변경사항 적용
         float numValue = _baseValue;
@@ -34,7 +34,7 @@ public class StatElement
         //덧셈 변경 적용 후 퍼센트 변경 적용
         float value = numValue * (1 + (float)percentModify / 100);
 
-        return value;
+        return Mathf.RoundToInt(value);
     }
 
     public void AddModify(float modify, bool _isPercentModify)

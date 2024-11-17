@@ -1,8 +1,9 @@
 using System;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Movement : MonoBehaviour, IUnitComponent
+public class Movement : MonoBehaviour, IInitComponent
 {
     private InputReaderSO _input;
     private Rigidbody2D _rigid;
@@ -12,9 +13,9 @@ public class Movement : MonoBehaviour, IUnitComponent
 
     [SerializeField] private float _speed = 10;
 
-    public void Initialize(Unit unit)
+    public void Initialize(Entity entity)
     {
-        _owner = unit;
+        _owner = entity as Unit;
         _rigid = GetComponent<Rigidbody2D>();
     }
 

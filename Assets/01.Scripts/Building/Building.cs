@@ -1,11 +1,12 @@
 using UnityEngine;
 
-public class Building : MonoBehaviour
+public class Building : Entity
 {
 	private BuildingModifier[] _buildingModifiers;
 
-	private void Awake()
+    protected override void Awake()
 	{
+		base.Awake();
 		_buildingModifiers = GetComponentsInChildren<BuildingModifier>();
 
 		foreach (BuildingModifier modifier in _buildingModifiers)
