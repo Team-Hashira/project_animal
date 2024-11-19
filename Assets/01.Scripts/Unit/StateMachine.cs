@@ -17,7 +17,7 @@ public class StateMachine
 
         _stateDictionary = new Dictionary<Enum, UnitStateBase>();
 
-        string unitName = _owner.name;
+        string unitName = _owner.GetType().ToString();
         Type unitStateEnumType = Type.GetType("E" + unitName + "State");
 
         if (unitStateEnumType == null)

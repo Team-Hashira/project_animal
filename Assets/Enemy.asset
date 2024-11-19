@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef843ff4ebdeee344a631d7c1ad9917f, type: 3}
   m_Name: Enemy
   m_EditorClassIdentifier: 
-  pairs: []
+  pairs:
+  - poolType: EnemySample
+    prefab: {fileID: 7475915146198194076, guid: 2f51b4d176a3e9b40918ae528c7d96e5, type: 3}
+    poolCount: 20
