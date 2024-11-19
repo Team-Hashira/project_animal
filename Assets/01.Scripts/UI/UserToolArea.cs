@@ -16,10 +16,12 @@ public class UserToolArea : MonoBehaviour
     {
         _rectTrm = transform as RectTransform;
 
-        _buildingBtn.onClick.AddListener(ToolArea);
+        _buildingBtn.onClick.AddListener(ToggleToolArea);
+
+        _buildingList.Init(this);
     }
 
-    private void ToolArea()
+    public void ToggleToolArea()
     {
         if (_isShowed)
             HideToolArea();
@@ -27,7 +29,7 @@ public class UserToolArea : MonoBehaviour
             ShowToolArea();
     }
 
-    private void ShowToolArea()
+    public void ShowToolArea()
     {
         _isShowed = true;
 
@@ -37,7 +39,7 @@ public class UserToolArea : MonoBehaviour
         _moveSeq.Append(_rectTrm.DOAnchorPosY(200, 0.2f));
     }
 
-    private void HideToolArea()
+    public void HideToolArea()
     {
         _isShowed = false;
 
