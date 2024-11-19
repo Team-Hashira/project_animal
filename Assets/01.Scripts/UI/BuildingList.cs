@@ -1,21 +1,26 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildingList : MonoBehaviour
 {
-    [SerializeField] private Building[] _buildings;
-    [SerializeField] private BuildingBtn _buildingBtnPrefab;
+    [SerializeField] private BuildingDataSO _buildingDataSO;
+    [SerializeField] private Button _buildingBtnPrefab;
+    [SerializeField] private BuildingPreview _buildingPreview;
+    private UserToolArea _userToolArea;
 
-    public void Init()
+    public void Init(UserToolArea userToolArea)
     {
+        _userToolArea = userToolArea;
 
-    }
 
-    private void Awake()
-    {
-        foreach (var building in _buildings)
+        foreach (EBuildingType buildingType in _buildingDataSO.buildingPrefabs.Keys)
         {
-            BuildingBtn buildingBtn = Instantiate(_buildingBtnPrefab, transform);
-            buildingBtn.Init(building);
+            Button buildingBtn = Instantiate(_buildingBtnPrefab, transform);
+            buildingBtn.onClick.AddListener(() => 
+            {
+                BuildingManager.Instance.OnBuildMode(buildingType);
+                _buildingPreview.SetBuilding(buildingType);
+            });
         }
     }
 }
