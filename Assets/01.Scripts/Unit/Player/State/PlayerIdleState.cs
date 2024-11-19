@@ -11,7 +11,7 @@ public class PlayerIdleState : UnitState<Player>
     {
         base.Enter();
 
-        _owner.GetCompo<Movement>().StopImmediate();
+        _owner.GetCompo<MovementCompo>().StopImmediate();
 
         _owner.Input.OnMoveEvnet += HandleMoveEvent;
     }

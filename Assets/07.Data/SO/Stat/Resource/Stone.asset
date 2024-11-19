@@ -10,24 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ed9b17438a6c3c47945e9045002a83e, type: 3}
-  m_Name: PlayerStat
+  m_Name: Stone
   m_EditorClassIdentifier: 
   statInfos:
   - statType: 0
     defaultValue: 100
-  - statType: 1
-    defaultValue: 0
-  - statType: 2
-    defaultValue: 0
-  - statType: 3
-    defaultValue: 10
-  - statType: 4
-    defaultValue: 0
-  - statType: 5
-    defaultValue: 0
-  - statType: 6
-    defaultValue: 0
-  - statType: 7
-    defaultValue: 8
-  - statType: 8
-    defaultValue: 0

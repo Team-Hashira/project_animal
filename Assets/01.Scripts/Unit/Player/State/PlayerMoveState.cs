@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerMoveState : UnitState<Player>
 {
-    private Movement _movement;
+    private MovementCompo _movement;
 
     public PlayerMoveState(Player owner, StateMachine stateMachine, string animationName) : base(owner, stateMachine, animationName)
     {
@@ -13,7 +13,7 @@ public class PlayerMoveState : UnitState<Player>
     {
         base.Enter();
 
-        _movement = _owner.GetCompo<Movement>();
+        _movement = _owner.GetCompo<MovementCompo>();
 
         _owner.Input.OnMoveEvnet += HandleMoveEvent;
     }

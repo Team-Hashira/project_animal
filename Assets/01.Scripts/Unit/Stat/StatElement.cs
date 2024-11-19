@@ -1,54 +1,58 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
 public class StatElement
 {
-    [SerializeField] private float _baseValue;
-    [SerializeField] private List<float> _addModifies = new List<float>();
-    [SerializeField] private List<float> _percentModifies = new List<float>();
+    [SerializeField] private int _baseValue;
+    [SerializeField] private List<int> _addModifies = new List<int>();
+    [SerializeField] private List<int> _percentModifies = new List<int>();
 
-    public StatElement(float baseValue) 
+    public int Value { get; private set; }
+
+    public StatElement(int baseValue)
     {
         _baseValue = baseValue;
+        SetValue();
     }
 
-    public int GetValue()
+    private void SetValue()
     {
         //덧셈 변경사항 적용
-        float numValue = _baseValue;
+        int numValue = _baseValue;
         for (int i = 0; i < _addModifies.Count; i++)
         {
             numValue += _addModifies[i];
         }
 
         //퍼센트 변경사항 적용
-        float percentModify = 0;
+        int percentModify = 0;
         for (int i = 0; i < _percentModifies.Count; i++)
         {
             percentModify += _percentModifies[i];
         }
 
         //덧셈 변경 적용 후 퍼센트 변경 적용
-        float value = numValue * (1 + (float)percentModify / 100);
+        int value = Mathf.RoundToInt(numValue * (1 + (float)percentModify / 10000));
 
-        return Mathf.RoundToInt(value);
+        Value = value;
     }
 
-    public void AddModify(float modify, bool _isPercentModify)
+    public void AddModify(int modify, bool _isPercentModify)
     {
         if (_isPercentModify)
             _percentModifies.Add(modify);
         else
             _addModifies.Add(modify);
+        SetValue();
     }
-    public void RemoveModify(float modify, bool _isPercentModify)
+    public void RemoveModify(int modify, bool _isPercentModify)
     {
         if (_isPercentModify && _percentModifies.Contains(modify))
-                _percentModifies.Add(modify);
+            _percentModifies.Add(modify);
         else if (_addModifies.Contains(modify))
-                _addModifies.Add(modify);
+            _addModifies.Add(modify);
+        SetValue();
     }
 }

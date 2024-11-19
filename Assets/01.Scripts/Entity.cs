@@ -1,13 +1,21 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using UnityEngine;
 
-public class Entity : MonoBehaviour, IHasStat
+[RequireComponent(typeof(StatCompo), typeof(HealthCompo))]
+public class Entity : MonoBehaviour, IDamageable
 {
-    [field:SerializeField] public Stat Stat { get; private set; }
-
     private Dictionary<Type, IInitComponent> _compoDict;
+
+    public event Action OnHitEvent;
+
+    public void ApplyDamage(int attackCoefficient, EStatType baseStatType, StatCompo harmerStat)
+    {
+        //int damage = DamageCalculator.CalculateDamage(attackCoefficient, baseStatType, harmerStat, GetCompo<StatCompo>());
+        GetCompo<HealthCompo>().ApplyDamage(attackCoefficient);
+    }
 
     protected virtual void Awake()
     {

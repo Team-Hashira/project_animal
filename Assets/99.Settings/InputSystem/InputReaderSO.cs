@@ -14,9 +14,11 @@ public class InputReaderSO : ScriptableObject, Controls.IPlayerActions
 
     #region Actions
     public Action<Vector2> OnMoveEvnet;
+    public Action<bool> OnLeftClickEvnet;
     #endregion
 
     #region Values
+    public Vector2 MousePosition { get; private set; }
     #endregion
 
 
@@ -38,5 +40,18 @@ public class InputReaderSO : ScriptableObject, Controls.IPlayerActions
     public void OnMove(InputAction.CallbackContext context)
     {
         OnMoveEvnet?.Invoke(context.ReadValue<Vector2>());
+    }
+
+    public void OnFire(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            OnLeftClickEvnet?.Invoke(true);
+        else if (context.canceled)
+            OnLeftClickEvnet?.Invoke(false);
+    }
+
+    public void OnMousePos(InputAction.CallbackContext context)
+    {
+        MousePosition = context.ReadValue<Vector2>();
     }
 }

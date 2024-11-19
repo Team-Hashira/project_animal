@@ -12,10 +12,10 @@ public static class DamageCalculator
     /// <param name="harmerStat">공격자 스탯</param>
     /// <param name="targetStat">피격자 스탯</param>
     /// <returns></returns>
-    public static float CalculateDamage(float attackCoefficient,
+    public static int CalculateDamage(float attackCoefficient,
                                         EStatType baseStatType,
-                                        Stat harmerStat,
-                                        Stat targetStat)
+                                        StatCompo harmerStat,
+                                        StatCompo targetStat)
     {
         //내 데미지 적용
         float finalDamage = harmerStat.GetValue(baseStatType);
@@ -37,6 +37,6 @@ public static class DamageCalculator
         //적 받는 데미지 적용
         finalDamage *= targetStat.GetValue(EStatType.ReceiveDamagePercent);
 
-        return finalDamage;
+        return Mathf.RoundToInt(finalDamage);
     }
 }

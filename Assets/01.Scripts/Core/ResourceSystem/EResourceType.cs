@@ -1,5 +1,5 @@
 public enum EResourceType
 {
-    None = 0,
-
+    Stone,
+    Gold
 }

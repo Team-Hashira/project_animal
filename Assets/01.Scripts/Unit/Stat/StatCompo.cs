@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements.Experimental;
 
 public enum EStatType
 {
@@ -20,12 +21,19 @@ public enum EStatType
 public struct StatInfo
 {
     public EStatType statType;
-    public float defaultValue;
+    public int defaultValue;
 }
 
-public class Stat : MonoBehaviour
+public class StatCompo : MonoBehaviour, IInitComponent
 {
     [SerializeField] private StatSO _stat;
+
+    private Entity _owner;
+
+    public void Initialize(Entity entity)
+    {
+        _owner = entity;
+    }
 
     public StatElement GetElement(EStatType statType)
     {
@@ -37,7 +45,7 @@ public class Stat : MonoBehaviour
         StatElement stat = _stat.GetStatElement(statType);
         if (stat != null)
         {
-            return stat.GetValue();
+            return stat.Value;
         }
         else
         {
