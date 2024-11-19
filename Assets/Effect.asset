@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef843ff4ebdeee344a631d7c1ad9917f, type: 3}
   m_Name: Effect
   m_EditorClassIdentifier: 
-  pairs: []
+  pairs:
+  - poolType: GetResourceEffect
+    prefab: {fileID: 6763026310323665563, guid: 94ef96600706001479fcc94c48dc5081, type: 3}
+    poolCount: 5
+  - poolType: OreHitEffect
+    prefab: {fileID: 472238949443652026, guid: 4ef482abf90e957458e66155f32b9fa8, type: 3}
+    poolCount: 5

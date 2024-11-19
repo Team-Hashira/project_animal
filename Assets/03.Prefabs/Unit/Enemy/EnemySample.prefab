@@ -216,8 +216,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resourceSO: {fileID: 11400000, guid: 5adeb35133c362a47b2e61e2a9abfae7, type: 2}
   _resourceGetCount: 2
-  _hitEffect: {fileID: 0}
-  _getResourceEffect: {fileID: 0}
+  _hitEffect: 1
+  _getResourceEffect: 0
 --- !u!1 &8358616873633733934
 GameObject:
   m_ObjectHideFlags: 0

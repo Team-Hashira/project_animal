@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3338074845830730274}
   - component: {fileID: 24838755875572639}
   - component: {fileID: 3679416981626242881}
+  - component: {fileID: 1565018609990099153}
   m_Layer: 0
   m_Name: OreHitEffect
   m_TagString: Untagged
@@ -4891,3 +4892,23 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &1565018609990099153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472238949443652026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e26cf1c624f17a24bb6159523e28a5dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAutoPush: 1
+  duration: 0.5
+  popEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  pushEvent:
+    m_PersistentCalls:
+      m_Calls: []
