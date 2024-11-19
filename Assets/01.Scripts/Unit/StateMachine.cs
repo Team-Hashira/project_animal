@@ -37,7 +37,7 @@ public class StateMachine
                 if (CurrentStateEnum == null)
                     CurrentStateEnum = item;
             }
-            catch (Exception e)
+            catch
             {
                 Debug.LogError($"No class [ {unitName + item.ToString()}State ]");
             }
