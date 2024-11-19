@@ -20,56 +20,60 @@ public class PoolManagerEditor : Editor
     {
         GUILayout.Label("PoolBase");
 
-        for (int i = 0; i < _poolManager.poolBaseList.Count; ++i)
-		{
-            for (int j = i+1; j < _poolManager.poolBaseList.Count; ++j)
-            {
-                if (_poolManager.poolBaseList[j] == null) continue; 
-                if (_poolManager.poolBaseList[i] == _poolManager.poolBaseList[j])
-                    Debug.LogWarning("같은 PoolBase를 리스트에 추가했습니다. PoolManager를 확인해주세요.");
-            }
-
-            GUILayout.BeginHorizontal();
-
-            if (_currentSelectedIndex == i)
-            {
-                GUI.color = Color.green;
-                _currentSelectedPoolBase = _poolManager.poolBaseList[i];
-            }
-            if(GUILayout.Button("Select"))
+        if( _poolManager.poolBaseList != null )
+        {
+			for (int i = 0; i < _poolManager.poolBaseList.Count; ++i)
 			{
-                SelectPoolBase(i);
-            }
+				for (int j = i + 1; j < _poolManager.poolBaseList.Count; ++j)
+				{
+					if (_poolManager.poolBaseList[j] == null) continue;
+					if (_poolManager.poolBaseList[i] == _poolManager.poolBaseList[j])
+						Debug.LogWarning("같은 PoolBase를 리스트에 추가했습니다. PoolManager를 확인해주세요.");
+				}
 
-            _poolManager.poolBaseList[i] = EditorGUILayout.ObjectField(_poolManager.poolBaseList[i], typeof(PoolBaseSO), false) as PoolBaseSO;
+				GUILayout.BeginHorizontal();
 
-            if (GUILayout.Button("New"))
-            {
-                var poolBase = ScriptableObject.CreateInstance<PoolBaseSO>();
+				if (_currentSelectedIndex == i)
+				{
+					GUI.color = Color.green;
+					_currentSelectedPoolBase = _poolManager.poolBaseList[i];
+				}
+				if (GUILayout.Button("Select"))
+				{
+					SelectPoolBase(i);
+				}
 
-                CreatePoolBaseAsset(poolBase);
-                _poolManager.poolBaseList[i] = poolBase;
-                SelectPoolBase(i);
-            }
+				_poolManager.poolBaseList[i] = EditorGUILayout.ObjectField(_poolManager.poolBaseList[i], typeof(PoolBaseSO), false) as PoolBaseSO;
 
-            if (_poolManager.poolBaseList[i] != null)
-            {
-                if (GUILayout.Button("Clone"))
-                {
-                    var poolBase = Instantiate(_poolManager.poolBaseList[i]);
+				if (GUILayout.Button("New"))
+				{
+					var poolBase = ScriptableObject.CreateInstance<PoolBaseSO>();
 
-                    CreatePoolBaseAsset(poolBase, poolBase.ToString());
-                    _poolManager.poolBaseList[i] = poolBase;
-                    SelectPoolBase(i);
-                }
-            }
+					CreatePoolBaseAsset(poolBase);
+					_poolManager.poolBaseList[i] = poolBase;
+					SelectPoolBase(i);
+				}
 
-            GUI.color = Color.white;
+				if (_poolManager.poolBaseList[i] != null)
+				{
+					if (GUILayout.Button("Clone"))
+					{
+						var poolBase = Instantiate(_poolManager.poolBaseList[i]);
 
-            GUILayout.EndHorizontal();
-        }
+						CreatePoolBaseAsset(poolBase, poolBase.ToString());
+						_poolManager.poolBaseList[i] = poolBase;
+						SelectPoolBase(i);
+					}
+				}
 
-        if (GUILayout.Button("+"))
+				GUI.color = Color.white;
+
+				GUILayout.EndHorizontal();
+			}
+
+		}
+
+		if (GUILayout.Button("+"))
 		{
             _poolManager.poolBaseList.Add(null);
             SelectPoolBase(_poolManager.poolBaseList.Count - 1);
