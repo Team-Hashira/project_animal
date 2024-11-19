@@ -25,16 +25,33 @@ public class ResourceManager : MonoSingleton<ResourceManager>
         }
 	}
 
-    public bool TryRemoveResource(EResourceType resourceType, int count)
+    public bool CanUseResource(EResourceType resourceType, int tryCount)
     {
-        if (_resourceCountDict.ContainsKey(resourceType) &&
-            _resourceCountDict[resourceType] > count)
+        if (_resourceCountDict.TryGetValue(resourceType, out int count))
         {
-            _resourceCountDict[resourceType] -= count;
+            return count >= tryCount;
+        }
+        return false;
+    }
+
+    public int RemoveResource(EResourceType resourceType, int count)
+    {
+        int remian = 0;
+        if (_resourceCountDict.ContainsKey(resourceType))
+        {
+            if (_resourceCountDict[resourceType] < count)
+            {
+                remian = count - _resourceCountDict[resourceType];
+                _resourceCountDict[resourceType] = 0;
+            }
+            else
+            {
+                _resourceCountDict[resourceType] -= count;
+                remian = _resourceCountDict[resourceType];
+            }
             OnResourceChangedEvent?.Invoke(resourceType, _resourceCountDict[resourceType]);
-            return true;
         }
 
-        return false;
+        return remian;
     }
 }

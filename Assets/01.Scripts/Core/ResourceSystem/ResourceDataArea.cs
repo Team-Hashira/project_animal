@@ -6,7 +6,7 @@ using UnityEngine;
 public class ResourceDataArea : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _stoneText, _goldText;
-    [SerializeField] private ResourceListSO _resourceListSO;
+    [SerializeField] private ResourceDataSO _resourceDataSO;
 
     private Dictionary<EResourceType, TextMeshProUGUI> _textDict;
 
@@ -28,13 +28,13 @@ public class ResourceDataArea : MonoBehaviour
         foreach (EResourceType resourceType in Enum.GetValues(typeof(EResourceType)))
         {
             _textDict[resourceType].text =
-                $"{_resourceListSO.GetResourceSO(resourceType).resourceName} : {ResourceManager.Instance.GetResourceCount(resourceType)}";
+                $"{_resourceDataSO[resourceType].resourceName} : {ResourceManager.Instance.GetResourceCount(resourceType)}";
         }
     }
 
     private void HandleResourceChangedEvent(EResourceType resourceType, int count)
     {
         _textDict[resourceType].text =
-            $"{_resourceListSO.GetResourceSO(resourceType).resourceName} : {count}";
+            $"{_resourceDataSO[resourceType].resourceName} : {count}";
     }
 }

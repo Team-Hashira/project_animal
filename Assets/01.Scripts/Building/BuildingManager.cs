@@ -7,14 +7,12 @@ using UnityEngine.UI;
 public class BuildingManager : MonoSingleton<BuildingManager>
 {
     [SerializeField] private BuildingDataSO _buildingDataSO;
-    private EBuildingType _buildingPreviewType;
     private List<Building> _curBuildings = new List<Building>();
 
     public bool IsBuildMove { get; private set; }
 
-    public void OnBuildMode(EBuildingType buildingType)
+    public void OnBuildMode()
     {
-        _buildingPreviewType = buildingType;
         IsBuildMove = true;
     }
 
