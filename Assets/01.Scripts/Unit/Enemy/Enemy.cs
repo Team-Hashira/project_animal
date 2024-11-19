@@ -12,32 +12,47 @@ public class Enemy : Unit, IPoolingObject
 	GameObject IPoolingObject.gameObject { get; set; }
 	[SerializeField] private LayerMask _whatIsFindable;
 	private Entity _curTarget;
-
+	private HealthCompo _healthCompo;
 	protected override void Awake()
 	{
 		base.Awake();
+		_healthCompo = GetCompo<HealthCompo>();
+		_healthCompo.OnDieEvent += OnDie;
+	}
+
+	protected override void OnDestroy()
+	{
+		base.OnDestroy();
+		_healthCompo.OnDieEvent -= OnDie;
 	}
 
 	public void OnPop()
 	{
+		_healthCompo.AfterInit();
 		for (int i = 0; i < 10; i++)
 		{
-			_curTarget = Physics2D.OverlapCircle(transform.position, i * 5, 0, _whatIsFindable)?.GetComponent<Entity>();
-			if (_curTarget != null) break;
-		}
-
-		if (_curTarget != null)
-		{
-			Debug.Log("찾았다!");
+			_curTarget = Physics2D.OverlapCircle(transform.position, i * 5, _whatIsFindable)?.GetComponent<Entity>();
+			if (_curTarget != null)
+			{
+				Debug.Log("찾았다!");
+				break;
+			}
 		}
 	}
 
 	public void OnPush()
 	{
+		_curTarget = null;
 	}
 
 	protected override void Update()
 	{
 		base.Update();
+	}
+
+	private void OnDie()
+	{
+		this.Push();
+		Debug.Log("죽음");
 	}
 }

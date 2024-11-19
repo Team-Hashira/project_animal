@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 413549411699694877}
   - component: {fileID: -5187673027613501859}
   - component: {fileID: 3505820458588193468}
+  - component: {fileID: 9219625168471684178}
   m_Layer: 7
   m_Name: EnemySample
   m_TagString: Untagged
@@ -201,6 +202,22 @@ MonoBehaviour:
   _whatIsFindable:
     serializedVersion: 2
     m_Bits: 320
+--- !u!114 &9219625168471684178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7475915146198194076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f64a6aa50d9fe469582249efe1b506, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _resourceSO: {fileID: 11400000, guid: 5adeb35133c362a47b2e61e2a9abfae7, type: 2}
+  _resourceGetCount: 2
+  _hitEffect: {fileID: 0}
+  _getResourceEffect: {fileID: 0}
 --- !u!1 &8358616873633733934
 GameObject:
   m_ObjectHideFlags: 0
