@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class BuildingList : MonoBehaviour
 {
-    [SerializeField] private BuildingDataSO _buildingDataSO;
+    [SerializeField] private BuildingDataSO _buildingDataSO; 
     [SerializeField] private Button _buildingBtnPrefab;
     [SerializeField] private BuildingPreview _buildingPreview;
     private UserToolArea _userToolArea;
