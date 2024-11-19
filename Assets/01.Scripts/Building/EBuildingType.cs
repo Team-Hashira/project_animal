@@ -1,6 +1,5 @@
-using UnityEngine;
-
 public enum EBuildingType
 {
-	MainControl = 0,
+    MainControl,
+    UnitSpawn,
 }

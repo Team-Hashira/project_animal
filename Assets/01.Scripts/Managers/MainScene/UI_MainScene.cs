@@ -28,6 +28,6 @@ public class UI_MainScene : UI_Scene
 
     private void Test()
     {
-        Debug.Log("¿¨");
+        
     }
 }

@@ -10,14 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8b6704e34e89ef45a75cb8b6379253a, type: 3}
-  m_Name: MainControlTower
+  m_Name: UnitSpawn
   m_EditorClassIdentifier: 
-  buildingName: "\uBA54\uC778\uD0C0\uC6CC"
-  sprite: {fileID: -8184243028988634350, guid: acd2f892e3008e94cbbe29dc97d572c9, type: 3}
+  buildingName: "\uC720\uB2DB \uC18C\uD658\uC18C"
+  sprite: {fileID: 4718626365000619479, guid: 97a7290a6ff43a44eb036d61982b864d, type: 3}
   recipe:
     _serializedList:
     - Key: 0
-      Value: 1
-    - Key: 1
-      Value: 2
-  building: {fileID: 1748522575373988087, guid: 0eca4d09b12cb7e4f9fb65337ecdd932, type: 3}
+      Value: 5
+  building: {fileID: 1748522575373988087, guid: 1fd45fb1932bc32488b4edf05e46263c, type: 3}
