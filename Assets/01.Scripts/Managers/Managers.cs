@@ -19,10 +19,10 @@ public class Managers : MonoBehaviour
 
     #region Core
     private UIManager _ui = new UIManager();
-    private SuppliesManager _supplies = new SuppliesManager();
+    private ResourceManager _resourceManager = new ResourceManager();
 
     public static UIManager UI { get { return Instance?._ui; } }
-    public static SuppliesManager SUPPLIES {  get { return Instance?._supplies; } }
+    public static ResourceManager Resource { get { return Instance?._resourceManager; } }
     #endregion
 
     public static void Init()
