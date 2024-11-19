@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BuildingDataSO", menuName = "SO/Building/BuildingDataSO", order = 0)]
 public class BuildingDataSO : ScriptableObject
 {
-	public SerializedDictionary<EBuildingType, Building> buildingPrefabs;
+	public SerializedDictionary<EBuildingType, BuildingSO> buildingPrefabs;
 
 	private void Reset()
 	{
@@ -18,9 +18,9 @@ public class BuildingDataSO : ScriptableObject
 	}
 
 
-	public Building this[EBuildingType buildingType]
+	public BuildingSO this[EBuildingType buildingType]
 	{
-		get => buildingPrefabs [buildingType];
+		get => buildingPrefabs[buildingType];
 		set => buildingPrefabs[buildingType] = value;
 	}
 }

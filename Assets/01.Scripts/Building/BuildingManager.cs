@@ -1,16 +1,36 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class BuildingManager : MonoBehaviour
+public class BuildingManager : MonoSingleton<BuildingManager>
 {
     [SerializeField] private BuildingDataSO _buildingDataSO;
-    private List<Building> _curBuildings;
+    private EBuildingType _buildingPreviewType;
+    private List<Building> _curBuildings = new List<Building>();
 
-    public Building CreateBuilding(EBuildingType buildingType, Vector2 position)
+    public bool IsBuildMove { get; private set; }
+
+    public void OnBuildMode(EBuildingType buildingType)
     {
-		Building building = Instantiate(_buildingDataSO[buildingType], position, Quaternion.identity);
+        _buildingPreviewType = buildingType;
+        IsBuildMove = true;
+    }
+
+    public void OffBuildMode()
+    {
+        IsBuildMove = false;
+    }
+
+    public Building CreateBuilding(EBuildingType buildingType, Vector2 position, Transform parent = null)
+    {
+		Building building = Instantiate(_buildingDataSO[buildingType].building, position, Quaternion.identity);
 		_curBuildings.Add(building);
-		return building;
+
+        building.transform.SetParent(parent);
+
+        return building;
     }
 
     public bool RemoveBuilding(Building building)
