@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58e0df190de716440858dd3e7c4f94f4, type: 3}
   m_Name: BuildingDataSO
   m_EditorClassIdentifier: 
-  buildingPrefabs:
+  buildingDict:
     _serializedList:
     - Key: 0
       Value: {fileID: 11400000, guid: 821be02e4efecd84eaced12babd92695, type: 2}
+    - Key: 1
+      Value: {fileID: 11400000, guid: 83e4f8e33d6c3864cb1f113684fb128c, type: 2}

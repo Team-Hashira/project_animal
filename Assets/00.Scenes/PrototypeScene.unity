@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buildingDataSO: {fileID: 11400000, guid: 879d4e58297b14c488266edbef51c882, type: 2}
-  _buildingBtnPrefab: {fileID: 851612358029428560, guid: bba843a422bdafd438c894be163da04d, type: 3}
+  _buildingBtnPrefab: {fileID: -82822227845154412, guid: bba843a422bdafd438c894be163da04d, type: 3}
   _buildingPreview: {fileID: 54295966}
 --- !u!1 &54295963
 GameObject:
@@ -281,6 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96bec2bf36a4b3e42a2989b0e7c4a68b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildingDataSO: {fileID: 11400000, guid: 879d4e58297b14c488266edbef51c882, type: 2}
   _input: {fileID: 11400000, guid: 289212b3f584fa54587b195452f2ca8f, type: 2}
   _buildingPreviewType: 0
 --- !u!1 &92351931
@@ -676,7 +677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stoneText: {fileID: 701643327}
   _goldText: {fileID: 863704220}
-  _resourceListSO: {fileID: 11400000, guid: e936814da539cca4f99d8bd62c963aaa, type: 2}
+  _resourceDataSO: {fileID: 11400000, guid: e936814da539cca4f99d8bd62c963aaa, type: 2}
 --- !u!1 &275855598
 GameObject:
   m_ObjectHideFlags: 0

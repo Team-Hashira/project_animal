@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 801269cb30970f44e9a1d50b186555ce, type: 3}
   m_Name: ResourceListSO
   m_EditorClassIdentifier: 
-  _resourceList:
-  - {fileID: 11400000, guid: 373a0894e1282534e88d5ddbb539f28c, type: 2}
-  - {fileID: 11400000, guid: 5adeb35133c362a47b2e61e2a9abfae7, type: 2}
+  resourceDict:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 11400000, guid: 373a0894e1282534e88d5ddbb539f28c, type: 2}
+    - Key: 1
+      Value: {fileID: 11400000, guid: 5adeb35133c362a47b2e61e2a9abfae7, type: 2}

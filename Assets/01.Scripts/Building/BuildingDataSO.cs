@@ -5,7 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BuildingDataSO", menuName = "SO/Building/BuildingDataSO", order = 0)]
 public class BuildingDataSO : ScriptableObject
 {
-	public SerializedDictionary<EBuildingType, BuildingSO> buildingPrefabs;
+    [SerializedDictionary("BuildingType", "BuildingSO")]
+    public SerializedDictionary<EBuildingType, BuildingSO> buildingDict = new SerializedDictionary<EBuildingType, BuildingSO>();
 
 	private void Reset()
 	{
@@ -13,14 +14,13 @@ public class BuildingDataSO : ScriptableObject
 
 		for (int i = 0; i < buildingTypes.Length; ++i)
 		{
-			buildingPrefabs.Add(buildingTypes[i], null);
+			buildingDict.Add(buildingTypes[i], null);
 		}
 	}
 
-
 	public BuildingSO this[EBuildingType buildingType]
 	{
-		get => buildingPrefabs[buildingType];
-		set => buildingPrefabs[buildingType] = value;
+		get => buildingDict[buildingType];
+		set => buildingDict[buildingType] = value;
 	}
 }

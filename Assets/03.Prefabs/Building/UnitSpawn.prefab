@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6727779626247660589}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8184243028988634350, guid: acd2f892e3008e94cbbe29dc97d572c9, type: 3}
+  m_Sprite: {fileID: 4718626365000619479, guid: 97a7290a6ff43a44eb036d61982b864d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 5571065055417485875}
   - component: {fileID: 8519210578385183670}
   m_Layer: 8
-  m_Name: MainControlTower
+  m_Name: UnitSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -221,7 +221,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2693864924578622743, guid: f422a4b1b8b5f734ab4726eca04574b9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.9
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2693864924578622743, guid: f422a4b1b8b5f734ab4726eca04574b9, type: 3}
       propertyPath: m_LocalScale.y
@@ -233,7 +233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2693864924578622743, guid: f422a4b1b8b5f734ab4726eca04574b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.861
+      value: 1.027
       objectReference: {fileID: 0}
     - target: {fileID: 2693864924578622743, guid: f422a4b1b8b5f734ab4726eca04574b9, type: 3}
       propertyPath: m_LocalPosition.z
