@@ -9,7 +9,6 @@ public class BuildingBuilder : MonoBehaviour
     [SerializeField] private EBuildingType _buildingPreviewType;
 
     private bool _isVisible = false;
-    private bool _onUIMouse;
     private Building _buildingPreview;
 
     public void SetBuilding(EBuildingType buildingType)
@@ -28,6 +27,8 @@ public class BuildingBuilder : MonoBehaviour
         }
         _buildingPreview = BuildingManager.Instance.CreateBuilding(_buildingPreviewType, transform.position, transform);
         _buildingPreview.SetPreview();
+
+        UIManager.Instance.OnBuildingMode(_buildingPreview != null);
     }
     public void SetBuilding()
     {
@@ -43,6 +44,8 @@ public class BuildingBuilder : MonoBehaviour
             Destroy(transform.GetChild(i).gameObject);
         }
         _buildingPreview = null;
+
+        UIManager.Instance.OnBuildingMode(_buildingPreview != null);
     }
 
     private void HandleLeftClickEvent(bool isDown)
@@ -56,7 +59,7 @@ public class BuildingBuilder : MonoBehaviour
         }
 
         BuildingSO buildingSO = _buildingDataSO[_buildingPreviewType];
-        if (_isVisible && !_onUIMouse)
+        if (_isVisible && !UIManager.Instance.OnUIMouse)
         {
             bool canCreate = buildingSO.recipe.Keys.All(resourceType => 
                 ResourceManager.Instance.CanUseResource(resourceType, buildingSO.recipe[resourceType]));
@@ -80,8 +83,6 @@ public class BuildingBuilder : MonoBehaviour
 
     private void Update()
     {
-        _onUIMouse = EventSystem.current.IsPointerOverGameObject();
-
         if (BuildingManager.Instance.IsBuildMove == false) return;
 
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(_input.MousePosition);
