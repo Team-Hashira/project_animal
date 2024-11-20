@@ -44,11 +44,6 @@ public class SkillUpgradeContainer : MonoBehaviour
 		}
 	}
 
-	private void OnDestroy()
-	{
-		LevelManager.Instance.OnLevelUpEvent -= HandleLevelUp;
-	}
-
 	private void Update()
 	{
 		if(_openCount > 0 && isOpenedSelectPanel == false)

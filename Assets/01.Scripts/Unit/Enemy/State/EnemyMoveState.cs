@@ -12,7 +12,7 @@ public class EnemyMoveState : UnitState<Enemy>
 	public override void Enter()
 	{
 		base.Enter();
-		surfaceMovementCompo.SetTarget(BuildingManager.Instance.CoreBuilding.transform.position);
+		surfaceMovementCompo.FindAndSetTarget();
 	}
 
 	public override void Exit()
