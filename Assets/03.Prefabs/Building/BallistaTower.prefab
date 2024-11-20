@@ -184,7 +184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6727779626247660589}
-  - component: {fileID: 1748522575373988087}
+  - component: {fileID: 6990590008642655248}
   - component: {fileID: 1872363820398939303}
   - component: {fileID: 5571065055417485875}
   - component: {fileID: 8519210578385183670}
@@ -212,7 +212,7 @@ Transform:
   - {fileID: 1389757270510882843}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1748522575373988087
+--- !u!114 &6990590008642655248
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,13 +221,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 5457756722320133908}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5756baa408173c14badf2729e2a49ba2, type: 3}
+  m_Script: {fileID: 11500000, guid: 4393a47b84407fb4f966de0b3d4fccee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _visualSpriteRenderer: {fileID: 879070744492070021}
   _whatIsBuilding:
     serializedVersion: 2
     m_Bits: 768
+  _whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 7
+  _ballistaTrm: {fileID: 1759615292607751524}
+  _shootDelay: 0.7
 --- !u!61 &1872363820398939303
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -439,6 +445,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6344240317545565538, guid: f938a817bc8d50741a01eef8dd05e21e, type: 3}
+      propertyPath: _healthCompo
+      value: 
+      objectReference: {fileID: 8519210578385183670}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
