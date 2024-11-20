@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8b6704e34e89ef45a75cb8b6379253a, type: 3}
+  m_Name: UnitSpawnTower
+  m_EditorClassIdentifier: 
+  buildingName: "\uC720\uB2DB \uC18C\uD658\uC18C"
+  sprite: {fileID: -1488026890190739441, guid: db9203958bd4c274380ebeb62776b063, type: 3}
+  recipe:
+    _serializedList:
+    - Key: 1
+      Value: 10
+  building: {fileID: 2238758393151771466, guid: bf53a479adfb05b47ac7a898644a892a, type: 3}

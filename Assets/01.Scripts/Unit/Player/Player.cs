@@ -28,10 +28,9 @@ public class Player : Unit
 
     private void HandleLeftClickEvent(bool isDown)
     {
-        if (isDown)
-        {
-            _damageCaster.CastDamage(10, EStatType.Damage, GetCompo<StatCompo>());
-        }
+        if (isDown == false | UIManager.Instance.OnUIMouse || UIManager.Instance.IsBuildingMode) return;
+
+        _damageCaster.CastDamage(10, EStatType.Damage, GetCompo<StatCompo>());
     }
 
     protected override void Update()
