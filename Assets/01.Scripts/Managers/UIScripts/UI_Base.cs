@@ -40,6 +40,7 @@ public class UI_Base : InitBase
     protected void BindButtons(Type type) { Bind<Button>(type); }
     protected void BindImages(Type type) { Bind<Image>(type); }
     protected void BindSliders(Type type) { Bind<Slider>(type); }
+    protected void BindToggle(Type type) { Bind<Toggle>(type); }
     #endregion
 
     #region Get
@@ -58,6 +59,6 @@ public class UI_Base : InitBase
     protected Button GetButtons(int idx) { return Get<Button>(idx); }
     protected Image GetImages(int idx) { return Get<Image>(idx); }
     protected Slider GetSlider(int idx) { return Get<Slider>(idx); }
-
+    protected Toggle GetToggle(int idx) {return Get<Toggle>(idx); }
     #endregion
 }

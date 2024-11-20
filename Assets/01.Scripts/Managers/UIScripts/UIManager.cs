@@ -1,10 +1,13 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class UIManager : MonoBehaviour 
 {
-    //private int _order = 10;
+        private int _order = 10;
 
     private UI_Scene _sceneUI = null;
 
@@ -35,5 +38,11 @@ public class UIManager : MonoBehaviour
         }
 
         CanvasScaler canvasScaler = Util.GetOrAddComponent<CanvasScaler>(gameObject);
+        if(canvasScaler != null)
+        {
+            canvasScaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            canvasScaler.referenceResolution = new Vector2(1080, 1920);
+        }
+        
     }
 }
