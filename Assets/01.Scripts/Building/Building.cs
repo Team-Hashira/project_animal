@@ -21,7 +21,7 @@ public class Building : Entity
         _boxCollider = GetComponent<BoxCollider2D>();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (_isPreview)
         {

@@ -17,7 +17,8 @@ public class WorkBarCompo : MonoBehaviour, IInitComponent
     private void Update()
     {
         if (_isEnable == false) return;
-        _workTrm.localScale = new Vector3(_amountFunc(), 1, 1);
+        float amount = Mathf.Clamp(_amountFunc(), 0, 1);
+        _workTrm.localScale = new Vector3(amount, 1, 1);
     }
 
     public void ShowWorkBar(Func<float> amount)
