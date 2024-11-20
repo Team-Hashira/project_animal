@@ -13,11 +13,7 @@ public class Managers : MonoBehaviour
 
 
     //여기에 Manager를 등록해주세요.
-    #region Content
-
-    #endregion
-
-    #region Core
+    #region Register
     private UIManager _ui = new UIManager();
     private ResourceManager _resourceManager = new ResourceManager();
 
