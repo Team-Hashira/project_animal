@@ -38,13 +38,10 @@ public class Player : Unit
     {
         base.Update();
 
-        if (!EventSystem.current.IsPointerOverGameObject())
-        {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.MousePosition);
-            mousePos.z = 0;
-            Vector3 dir = (mousePos - transform.position).normalized;
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.MousePosition);
+        mousePos.z = 0;
+        Vector3 dir = (mousePos - transform.position).normalized;
 
-            _targetArrow.rotation = Quaternion.LookRotation(Vector3.back, dir);
-        }
+        _targetArrow.rotation = Quaternion.LookRotation(Vector3.back, dir);
     }
 }
