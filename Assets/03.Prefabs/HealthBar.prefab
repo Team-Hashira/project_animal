@@ -200,7 +200,7 @@ MonoBehaviour:
   _health: {fileID: 1318314076331987326}
   _changedHealth: {fileID: 3181915349251634707}
   _donwSpeed: 20
-  _changedBarWaitTime: 0.5
+  _changedBarWaitTime: 0.4
 --- !u!1 &4615059399386547681
 GameObject:
   m_ObjectHideFlags: 0

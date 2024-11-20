@@ -21,9 +21,9 @@ public class ResourceManager : MonoSingleton<ResourceManager>
         if (_resourceCountDict.TryAdd(resourceType, count) == false)
         {
             _resourceCountDict[resourceType] += count;
-            OnResourceChangedEvent?.Invoke(resourceType, _resourceCountDict[resourceType]);
         }
-	}
+        OnResourceChangedEvent?.Invoke(resourceType, _resourceCountDict[resourceType]);
+    }
 
     public bool CanUseResource(EResourceType resourceType, int tryCount)
     {
@@ -36,22 +36,22 @@ public class ResourceManager : MonoSingleton<ResourceManager>
 
     public int RemoveResource(EResourceType resourceType, int count)
     {
-        int remian = 0;
+        int over = 0;
         if (_resourceCountDict.ContainsKey(resourceType))
         {
             if (_resourceCountDict[resourceType] < count)
             {
-                remian = count - _resourceCountDict[resourceType];
+                over = count - _resourceCountDict[resourceType];
                 _resourceCountDict[resourceType] = 0;
             }
             else
             {
                 _resourceCountDict[resourceType] -= count;
-                remian = _resourceCountDict[resourceType];
+                over = _resourceCountDict[resourceType];
             }
             OnResourceChangedEvent?.Invoke(resourceType, _resourceCountDict[resourceType]);
         }
 
-        return remian;
+        return over;
     }
 }
