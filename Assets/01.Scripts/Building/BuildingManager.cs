@@ -6,12 +6,17 @@ using UnityEngine.UI;
 
 public class BuildingManager : MonoSingleton<BuildingManager>
 {
+    [field:SerializeField] public Building CoreBuilding {get; private set;}
     [SerializeField] private BuildingDataSO _buildingDataSO;
     private List<Building> _curBuildings = new List<Building>();
 
     public bool IsBuildMove { get; private set; }
 
-    public void OnBuildMode()
+	private void Awake()
+	{
+	}
+
+	public void OnBuildMode()
     {
         IsBuildMove = true;
     }

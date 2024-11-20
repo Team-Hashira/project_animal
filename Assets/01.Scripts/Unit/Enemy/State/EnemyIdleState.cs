@@ -9,6 +9,7 @@ public class EnemyIdleState : UnitState<Enemy>
 	public override void Enter()
 	{
 		base.Enter();
+		_stateMachine.ChangeState(EEnemyState.Move);
 	}
 
 	public override void Exit()
