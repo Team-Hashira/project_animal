@@ -5,7 +5,6 @@ using static UnityEngine.EventSystems.EventTrigger;
 [RequireComponent(typeof(Rigidbody2D))]
 public class MovementCompo : MonoBehaviour, IAfterInitComponent
 {
-    private InputReaderSO _input;
     private Rigidbody2D _rigid;
     private Unit _owner;
 
