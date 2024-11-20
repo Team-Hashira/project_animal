@@ -14,7 +14,7 @@ public class UnitSpawnBuildingCompo : MonoBehaviour, IBuildingComponent
 
     public void Init(Building owner)
     {
-        _spawnList = new List<EnemyPoolType>();
+        //_spawnList = new List<EnemyPoolType>();
         _isEnable = false;
         _currentSpawnTime = 0;
     }
