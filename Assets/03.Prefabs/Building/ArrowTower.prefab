@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 5571065055417485875}
   - component: {fileID: 8519210578385183670}
   m_Layer: 8
-  m_Name: UnitSpawn
+  m_Name: ArrowTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
