@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Building : Entity
 {
-	private BuildingModifier[] _buildingModifiers;
+	private IBuildingComponent[] _buildingModifiers;
 	private BoxCollider2D _boxCollider;
 	[SerializeField] private SpriteRenderer _visualSpriteRenderer;
     [SerializeField] private LayerMask _whatIsBuilding;
@@ -20,9 +20,9 @@ public class Building : Entity
 	{
 		base.Awake();
         _boxCollider = GetComponent<BoxCollider2D>();
-        _buildingModifiers = GetComponentsInChildren<BuildingModifier>();
+        _buildingModifiers = GetComponentsInChildren<IBuildingComponent>();
 
-		foreach (BuildingModifier modifier in _buildingModifiers)
+		foreach (IBuildingComponent modifier in _buildingModifiers)
 		{
 			modifier.Init(this);
         }

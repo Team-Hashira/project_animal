@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ResourceGenerator : BuildingModifier
+public class ResourceGeneratorBuildingCompo : MonoBehaviour, IBuildingComponent
 {
 	public float delay = 1;
 	public EResourceType resourceType;
@@ -8,9 +8,8 @@ public class ResourceGenerator : BuildingModifier
 
 	private ResourceManager _resourceManager;
 
-	public override void Init(Building owner)
+	public void Init(Building owner)
 	{
-		base.Init(owner);
 		_resourceManager = ResourceManager.Instance;
 	}
 
