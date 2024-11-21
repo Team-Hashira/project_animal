@@ -10,7 +10,7 @@ public class WaveManager : MonoSingleton<WaveManager>
 	private WaveDataSO _curWaveDataSO;
 
 	//Events
-	public event Action<int> OnGenerateStartEvent;
+	public event Action OnGenerateStartEvent;
 	public event Action OnGenerateEndEvent;
 
 	//Values
@@ -23,7 +23,7 @@ public class WaveManager : MonoSingleton<WaveManager>
 		OnGenerate();
 	}
 
-	public void OnGenerate()
+	private void OnGenerate()
 	{
 		StartCoroutine(CoroutineGenerateRoop(_waveDataListSO[WaveNumber]));
 	}
@@ -38,7 +38,7 @@ public class WaveManager : MonoSingleton<WaveManager>
 		foreach (var waveData in waveDataSO.wave)
 			EnemyCount += waveData.enemyCount;
 
-		OnGenerateStartEvent?.Invoke(EnemyCount);
+		OnGenerateStartEvent?.Invoke();
 
 		//웨이브 실행
 		yield return StartCoroutine(CoroutineEnemyGenerate(waveDataSO));
