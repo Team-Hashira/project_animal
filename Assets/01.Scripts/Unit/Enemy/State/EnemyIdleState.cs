@@ -22,7 +22,6 @@ public class EnemyIdleState : UnitState<Enemy>
 
 	public override void Update()
 	{
-		Debug.Log("Idle");
 		base.Update();
 		if (_surfaceMovementCompo.MoveToTarget() != null)
 			_stateMachine.ChangeState(EEnemyState.Move);
