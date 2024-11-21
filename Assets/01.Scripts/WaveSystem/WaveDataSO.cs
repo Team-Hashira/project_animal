@@ -6,4 +6,10 @@ using UnityEngine;
 public class WaveDataSO : ScriptableObject
 {
     public List<WaveData> wave;
+
+    public int Count { get => wave.Count; }
+    public WaveData this[int index]
+    {
+        get => wave[index];
+	}
 }

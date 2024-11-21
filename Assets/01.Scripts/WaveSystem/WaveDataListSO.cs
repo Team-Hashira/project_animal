@@ -5,4 +5,7 @@ using UnityEngine;
 public class WaveDataListSO : ScriptableObject
 {
 	public List<WaveDataSO> waveDataSOList;
+
+	public int Count => waveDataSOList.Count;
+	public WaveDataSO this[int index] => waveDataSOList[index];
 }

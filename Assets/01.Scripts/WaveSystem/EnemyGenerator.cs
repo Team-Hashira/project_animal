@@ -1,16 +1,16 @@
+using Crogen.CrogenPooling;
 using UnityEngine;
 
 public class EnemyGenerator : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float _spawnRadius = 2f;
 
-    // Update is called once per frame
-    void Update()
+    public void OnGenerate(EnemyPoolType enemyType, int count)
     {
-        
+        for (int i = 0; i < count; i++)
+        {
+            Vector2 ranPos = Random.insideUnitCircle * _spawnRadius;
+            gameObject.Pop(enemyType, ranPos, Quaternion.identity);
+        }
     }
 }
