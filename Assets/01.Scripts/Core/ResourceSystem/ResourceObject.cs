@@ -18,6 +18,11 @@ public class ResourceObject : Entity
         _healthCompo.OnDieEvent += HandleDieEvent;
     }
 
+    protected override void OnDestroy()
+    {
+        _healthCompo.OnDieEvent -= HandleDieEvent;
+    }
+
     private void HandleHealthChangedEvent(int prevHealth, int newHealth, bool isVisible)
     {
         if (prevHealth > newHealth)
