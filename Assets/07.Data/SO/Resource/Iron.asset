@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08c41fe550559a54d882501a40bc0a00, type: 3}
-  m_Name: Gold
+  m_Name: Iron
   m_EditorClassIdentifier: 
-  resourceName: "\uAE08"
+  resourceName: "\uCCA0"
   resourceType: 1
-  sprite: {fileID: -1005278575, guid: 132358e9bf26b60458b731bf001e31db, type: 3}
+  sprite: {fileID: -432371257959028881, guid: 1e0527fe08fa23b439196bbb0a24f854, type: 3}
