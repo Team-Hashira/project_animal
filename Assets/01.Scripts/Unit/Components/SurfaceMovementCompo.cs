@@ -5,12 +5,9 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class SurfaceMovementCompo : MonoBehaviour, IAfterInitComponent
 {
-	private NavMeshAgent _agent;
+	[SerializeField] private NavMeshAgent _agent;
 	[SerializeField] private LayerMask _whatIsFindable;
-
-	private void Awake()
-	{
-	}
+	private Transform _targetTrm;
 
 	public void AfterInit()
 	{
@@ -21,31 +18,44 @@ public class SurfaceMovementCompo : MonoBehaviour, IAfterInitComponent
 
 	}
 
-	public void FindAndSetTarget()
+	public void ImmediatelyStop()
 	{
-		SetTarget(FindTarget());
+		_agent.velocity = Vector3.zero;
+		_agent.isStopped = false;
+	}
+
+	public Transform FindAndSetTarget()
+	{
+		if (FindTarget() != null)
+		{
+			SetTarget(_targetTrm.position);
+			return _targetTrm;
+		}
+		return null;
 	}	
 
 	public void SetTarget(Vector2 target)
 	{
-		_agent ??= GetComponent<NavMeshAgent>();
+		_agent.isStopped = true;
 		_agent.SetDestination(target);
 	}
 
-	public Vector2 FindTarget()
+	public Transform FindTarget()
 	{
-		Vector2 target = transform.position;
+		if (_targetTrm != null)
+		{
+			if (_targetTrm.gameObject.activeSelf == false)
+				_targetTrm = null;
+
+			return _targetTrm;
+		}
+
 		for (int i = 0; i < 10; i++)
 		{
-			var trm = Physics2D.OverlapCircle(transform.position, i * 5, _whatIsFindable)?.transform;
-			if(trm != null)
-			target = trm.position;
+			_targetTrm = Physics2D.OverlapCircle(transform.position, i * 20, _whatIsFindable)?.transform;
+			if (_targetTrm != null) continue;
 		}
-		return target;
-	}
 
-	void Update()
-    {
-        
-    }
+		return _targetTrm;
+	}
 }

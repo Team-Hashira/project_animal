@@ -30,7 +30,7 @@ public class Enemy : Unit, IPoolingObject
 	public void OnPop()
 	{
 		_healthCompo.AfterInit();
-		
+		_stateMachine.ChangeState(EEnemyState.Idle);
 	}
 
 	public void OnPush()

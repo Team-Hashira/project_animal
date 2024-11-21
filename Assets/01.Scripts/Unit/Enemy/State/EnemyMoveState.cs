@@ -2,17 +2,16 @@ using UnityEngine;
 
 public class EnemyMoveState : UnitState<Enemy>
 {
-	SurfaceMovementCompo surfaceMovementCompo;
+	SurfaceMovementCompo _surfaceMovementCompo;
 
 	public EnemyMoveState(Enemy owner, StateMachine stateMachine, string animationName) : base(owner, stateMachine, animationName)
 	{
-		surfaceMovementCompo = owner.GetCompo<SurfaceMovementCompo>();
+		_surfaceMovementCompo = owner.GetCompo<SurfaceMovementCompo>();
 	}
 
 	public override void Enter()
 	{
 		base.Enter();
-		surfaceMovementCompo.FindAndSetTarget();
 	}
 
 	public override void Exit()
@@ -22,6 +21,7 @@ public class EnemyMoveState : UnitState<Enemy>
 
 	public override void Update()
 	{
-		base.Update();
+		if (_surfaceMovementCompo.FindAndSetTarget())
+			_stateMachine.ChangeState(EEnemyState.Idle);
 	}
 }
