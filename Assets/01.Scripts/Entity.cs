@@ -31,7 +31,6 @@ public class Entity : MonoBehaviour, IDamageable
 
         _initCompo.ForEach(component => _compoDict.Add(component.GetType(), component));
 
-        Debug.Log(this is not IPoolingObject);
         if (this is not IPoolingObject pooling)
             InitComponent();
     }

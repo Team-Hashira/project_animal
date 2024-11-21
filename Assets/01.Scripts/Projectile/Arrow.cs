@@ -41,7 +41,7 @@ public class Arrow : MonoBehaviour, IPoolingObject
 
         if (_isEnable == false) return;
 
-        Vector3 movement = transform.up * Time.fixedDeltaTime;
+        Vector3 movement = transform.up * (Time.fixedDeltaTime * _speed);
         if (_collider.CheckCollision(_whatIsTarget, movement))
         {
             foreach (var hit in _collider.GetHits())
