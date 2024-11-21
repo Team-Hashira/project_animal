@@ -1,3 +1,4 @@
+using Crogen.CrogenPooling;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,9 @@ using UnityEngine;
 public class Entity : MonoBehaviour, IDamageable
 {
     private Dictionary<Type, IInitComponent> _compoDict;
+    private List<IInitComponent> _initCompo;
+    private List<IAfterInitComponent> _afterInitCompo;
+    private List<IDisposeComponent> _disposeCompo;
 
     public event Action OnHitEvent;
 
@@ -21,21 +25,31 @@ public class Entity : MonoBehaviour, IDamageable
     {
         _compoDict = new Dictionary<Type, IInitComponent>();
 
-        GetComponentsInChildren<IInitComponent>().ToList()
-            .ForEach(component =>
-            {
-                _compoDict.Add(component.GetType(), component);
-                component.Initialize(this);
-            });
+        _initCompo = GetComponentsInChildren<IInitComponent>().ToList();
+        _afterInitCompo = GetComponentsInChildren<IAfterInitComponent>().ToList();
+        _disposeCompo = GetComponentsInChildren<IDisposeComponent>().ToList();
 
-        GetComponentsInChildren<IAfterInitComponent>().ToList()
-            .ForEach(component => component.AfterInit());
+        _initCompo.ForEach(component => _compoDict.Add(component.GetType(), component));
+
+        Debug.Log(this is not IPoolingObject);
+        if (this is not IPoolingObject pooling)
+            InitComponent();
+    }
+
+    protected void InitComponent()
+    {
+        _initCompo.ForEach(component => component.Initialize(this));
+        _afterInitCompo.ForEach(component => component.AfterInit());
+    }
+    protected void DisposeComponent()
+    {
+        _disposeCompo.ForEach(component => component.Dispose());
     }
 
     protected virtual void OnDestroy()
     {
-        GetComponentsInChildren<IDisposeComponent>().ToList()
-            .ForEach(component => component.Dispose());
+        if (this is not IPoolingObject)
+            DisposeComponent();
     }
 
     public T GetCompo<T>(bool isDerived = false) where T : class, IInitComponent
