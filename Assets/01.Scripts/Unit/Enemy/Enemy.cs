@@ -29,12 +29,13 @@ public class Enemy : Unit, IPoolingObject
 
 	public void OnPop()
 	{
-		_healthCompo.AfterInit();
+		InitComponent();
 		_stateMachine.ChangeState(EEnemyState.Idle);
 	}
 
 	public void OnPush()
 	{
+		DisposeComponent();
 	}
 
 	protected override void Update()

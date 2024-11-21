@@ -13,6 +13,7 @@ public class EnemyIdleState : UnitState<Enemy>
 	{
 		base.Enter();
 		_surfaceMovementCompo.StopImmediately();
+		_stateMachine.ChangeState(EEnemyState.Move);
 	}
 
 	public override void Exit()
@@ -23,7 +24,5 @@ public class EnemyIdleState : UnitState<Enemy>
 	public override void Update()
 	{
 		base.Update();
-		if (_surfaceMovementCompo.MoveToTarget() != null)
-			_stateMachine.ChangeState(EEnemyState.Move);
 	}
 }

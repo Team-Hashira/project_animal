@@ -4083,14 +4083,47 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4491208098423910481, guid: ccb40df2ceaf85648bb8b0a38f1d83d3, type: 3}
+      propertyPath: m_TileModifiers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491208098423910481, guid: ccb40df2ceaf85648bb8b0a38f1d83d3, type: 3}
+      propertyPath: m_TileModifiers.Array.data[0].area
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491208098423910481, guid: ccb40df2ceaf85648bb8b0a38f1d83d3, type: 3}
+      propertyPath: m_TileModifiers.Array.data[0].tile
+      value: 
+      objectReference: {fileID: 11400000, guid: 8051bda957754b549b6505420c374989, type: 2}
+    - target: {fileID: 4491208098423910481, guid: ccb40df2ceaf85648bb8b0a38f1d83d3, type: 3}
+      propertyPath: m_TileModifiers.Array.data[0].overrideArea
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279596771846057964, guid: ccb40df2ceaf85648bb8b0a38f1d83d3, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7761284724115416730, guid: ccb40df2ceaf85648bb8b0a38f1d83d3, type: 3}
       propertyPath: m_Name
       value: Level
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 5226947328827465855, guid: ccb40df2ceaf85648bb8b0a38f1d83d3, type: 3}
-    - {fileID: 2479821248843772191, guid: ccb40df2ceaf85648bb8b0a38f1d83d3, type: 3}
+    - target: {fileID: 7984927541638245345, guid: ccb40df2ceaf85648bb8b0a38f1d83d3, type: 3}
+      propertyPath: m_ColliderPaths.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7984927541638245345, guid: ccb40df2ceaf85648bb8b0a38f1d83d3, type: 3}
+      propertyPath: m_CompositePaths.m_Paths.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667760851058689047, guid: ccb40df2ceaf85648bb8b0a38f1d83d3, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6737409666150064601, guid: ccb40df2ceaf85648bb8b0a38f1d83d3, type: 3}
+    - {fileID: 7984927541638245345, guid: ccb40df2ceaf85648bb8b0a38f1d83d3, type: 3}
+    - {fileID: 5133168419956204135, guid: ccb40df2ceaf85648bb8b0a38f1d83d3, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccb40df2ceaf85648bb8b0a38f1d83d3, type: 3}
@@ -4173,6 +4206,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2070023330924561935, guid: 79b5fc2cc2db9d84a9c3797ba58c2f89, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429631305577733198, guid: 79b5fc2cc2db9d84a9c3797ba58c2f89, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8212603969640140483, guid: 79b5fc2cc2db9d84a9c3797ba58c2f89, type: 3}
@@ -4310,6 +4347,7 @@ SceneRoots:
   - {fileID: 505914888}
   - {fileID: 538685183}
   - {fileID: 759255093}
+  - {fileID: 1114328897}
   - {fileID: 940451750}
   - {fileID: 275855602}
   - {fileID: 1304062477}
@@ -4320,5 +4358,4 @@ SceneRoots:
   - {fileID: 54295964}
   - {fileID: 663555960}
   - {fileID: 1029950413368049742}
-  - {fileID: 1114328897}
   - {fileID: 1547450651}
