@@ -5,10 +5,10 @@ public class ProjectileBoxCollider2D : ProjectileCollider2D
     public Vector2 size;
     public Vector2 offset;
 
-    public override bool CollisionCheck(Vector2 moveTo)
+    public override bool CheckCollision(LayerMask whatIsTarget, Vector2 moveTo = default)
     {
         _hits = Physics2D.BoxCastAll(transform.position + transform.rotation * offset,
-                            size, transform.rotation.z, moveTo.normalized, moveTo.magnitude);
+                            size, transform.rotation.z, moveTo.normalized, moveTo.magnitude, whatIsTarget);
 
         return _hits.Length > 0;
     }

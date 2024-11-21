@@ -1,3 +1,4 @@
+using Crogen.CrogenPooling;
 using System;
 using UnityEngine;
 
@@ -8,9 +9,14 @@ public class BallistaTower : Building
     [SerializeField] private float _radius;
     [SerializeField] private Transform _ballistaTrm;
 
-    [Header("Attack setting")]
+    [Header("Shoot setting")]
     [SerializeField] private float _shootDelay;
     private float _currentCountUp;
+
+    [Header("Arrow setting")]
+    [SerializeField] private ProjectilePoolType _arrow;
+    [SerializeField] private int _arrowdamage;
+    [SerializeField] private float _arrowSpeed;
 
     private Unit _target;
     private WorkBarCompo _workBarCompo;
@@ -46,7 +52,8 @@ public class BallistaTower : Building
 
     private void Shoot()
     {
-        Debug.Log("»§¾ß");
+        Arrow arrow = gameObject.Pop(_arrow, _ballistaTrm.position, _ballistaTrm.rotation) as Arrow;
+        arrow.Init(this, _whatIsEnemy, _arrowSpeed, _arrowdamage);
     }
 
     private void OnDrawGizmos()
