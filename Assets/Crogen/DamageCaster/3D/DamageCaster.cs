@@ -45,16 +45,12 @@ public abstract class DamageCaster : MonoBehaviour
 		for (int i = 0; i < _castColliders.Length; ++i)
 		{
 			if (_castColliders[i] == null)
-			{
 				break;
-			}
-			else
-			{
-				OnDamageCastSuccessEvent?.Invoke();
-			}
+
 			if (_castColliders[i].TryGetComponent(out IDamageable damageable))
 			{
 				damageable.ApplyDamage(damage, mainStatType, stat);
+				OnDamageCastSuccessEvent?.Invoke();
 			}
 			if (_castColliders[i] != null)
 			{
