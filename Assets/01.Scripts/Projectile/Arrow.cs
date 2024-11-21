@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private Entity _owner;
+    private LayerMask _whatIsTarget;
+    private float _speed;
+
+    public void Init(Entity owner, LayerMask whatIsTarget, float speed)
     {
-        
+        _speed= speed;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         
     }
