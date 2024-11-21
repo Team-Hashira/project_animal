@@ -9,8 +9,11 @@ public class SurfaceMovementCompo : MonoBehaviour, IAfterInitComponent
 	[SerializeField] private NavMeshAgent _agent;
 	[SerializeField] private LayerMask _whatIsFindable;
 	[SerializeField] private int _maxFindCount = 10;
+	[SerializeField] private Transform _moveDirArrowTrm;
 	private Transform _targetTrm;
 	private Collider2D[] _colliders;
+
+	public Vector2 MoveDirection { get; private set; }
 
 	private ContactFilter2D _targetFilter;
 
@@ -18,6 +21,13 @@ public class SurfaceMovementCompo : MonoBehaviour, IAfterInitComponent
 	{
 		_targetFilter = new ContactFilter2D() { layerMask = _whatIsFindable, useLayerMask = true, useTriggers = true };
 		_colliders = new Collider2D[_maxFindCount];
+	}
+
+	private void Update()
+	{
+		MoveDirection = (_agent.destination - transform.position).normalized;
+		if (_moveDirArrowTrm != null)
+			_moveDirArrowTrm.up = MoveDirection;
 	}
 
 	public void AfterInit()
