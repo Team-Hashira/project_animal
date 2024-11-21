@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ResourceDataArea : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _stoneText, _goldText;
+    [SerializeField] private TextMeshProUGUI _woodText, _stoneText, _ironText;
     [SerializeField] private ResourceDataSO _resourceDataSO;
 
     private Dictionary<EResourceType, TextMeshProUGUI> _textDict;
@@ -17,7 +17,8 @@ public class ResourceDataArea : MonoBehaviour
         _textDict = new Dictionary<EResourceType, TextMeshProUGUI>
         {
             { EResourceType.Stone, _stoneText },
-            { EResourceType.Gold, _goldText }
+            { EResourceType.Iron, _ironText },
+            { EResourceType.Wood, _woodText },
         };
 
         SetUpResourceText();

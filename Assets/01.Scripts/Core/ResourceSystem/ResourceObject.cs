@@ -1,11 +1,10 @@
-using System;
 using UnityEngine;
 using Crogen.CrogenPooling;
  
 public class ResourceObject : Entity
 {
     [SerializeField] private ResourceSO _resourceSO;
-    [SerializeField] private int _resourceGetCount = 2;
+    [SerializeField] private Vector2Int _resourceGetCount;
     [SerializeField] private EffectPoolType _hitEffect, _getResourceEffect;
 
     private HealthCompo _healthCompo;
@@ -35,6 +34,6 @@ public class ResourceObject : Entity
     {
         _healthCompo.Resurrection();
 		gameObject.Pop(_getResourceEffect, transform.position, Quaternion.identity);
-        ResourceManager.Instance.AddResource(_resourceSO.resourceType, _resourceGetCount);
+        ResourceManager.Instance.AddResource(_resourceSO.resourceType, Random.Range(_resourceGetCount.x, _resourceGetCount.y));
     }
 }

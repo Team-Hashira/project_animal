@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statInfos:
   - statType: 0
-    defaultValue: 30
+    defaultValue: 70
