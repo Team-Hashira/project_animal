@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
@@ -10,6 +12,7 @@ public class SelectRect : MonoBehaviour
     private bool _isDrag;
     private SpriteRenderer _spriteRenderer;
     private Collider2D[] _colliders;
+    private Collider2D[] _selectedObj;
 
     [SerializeField] private LayerMask _whatIsTarget;
 
@@ -45,7 +48,33 @@ public class SelectRect : MonoBehaviour
         {
             SizeSetting();
 
-            _colliders = Physics2D.OverlapBoxAll(transform.position, transform.lossyScale, 0, _whatIsTarget);
+            _colliders = Physics2D.OverlapBoxAll(transform.position, transform.localScale, 0, _whatIsTarget);
+
+            if (_selectedObj != null)
+            {
+                if (_colliders.Length > 0)
+                {
+                    _colliders.Except(_selectedObj).ToList().ForEach(coll =>
+                    {
+                        if (coll.TryGetComponent(out ISelectable selectable))
+                        {
+                            selectable.Select(true);
+                        }
+                    });
+                }
+                if (_selectedObj.Length > 0)
+                {
+                    _selectedObj.Except(_colliders).ToList().ForEach(coll =>
+                    {
+                        if (coll.TryGetComponent(out ISelectable selectable))
+                        {
+                            selectable.Select(false);
+                        }
+                    });
+                }
+            }
+            
+            _selectedObj = _colliders;
         }
     }
 
@@ -53,7 +82,17 @@ public class SelectRect : MonoBehaviour
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(_input.MousePosition);
         mousePos.z = 0;
-        transform.localScale = mousePos - _startPos;
+        Vector3 scale = mousePos - _startPos;
+        scale.x = Mathf.Abs(scale.x);
+        scale.y = Mathf.Abs(scale.y);
+        scale.z = Mathf.Abs(scale.z);
+        transform.localScale = scale;
         transform.position = (mousePos + _startPos) / 2;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(transform.position, transform.localScale);
     }
 }

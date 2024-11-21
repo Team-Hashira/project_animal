@@ -3,10 +3,10 @@ using UnityEngine;
 
 public enum EAllyPigState
 {
-    Idle
+    Idle, Move, Attack, Dead
 }
 
-public class AllyPig : Unit, Ally
+public class AllyPig : Unit, IAlly
 {
     public string OriginPoolType { get; set; }
     //GameObject IPoolingObject.gameObject { get; set; }
@@ -51,5 +51,10 @@ public class AllyPig : Unit, Ally
     public void OnSelect()
     {
 
+    }
+
+    public void Select(bool onSelect)
+    {
+        GetCompo<VisualCompo>().OutlineActive(onSelect);
     }
 }
