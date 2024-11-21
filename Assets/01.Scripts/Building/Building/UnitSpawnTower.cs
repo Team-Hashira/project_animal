@@ -1,11 +1,10 @@
 using Crogen.CrogenPooling;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class UnitSpawnBuildingCompo : MonoBehaviour, IInitComponent
+public class UnitSpawnTower : Building
 {
+    [Header("Spawn setting")]
     [SerializeField] private float _spawnDelay;
     [SerializeField] private bool _isEnable;
     [SerializeField] private List<EnemyPoolType> _spawnList;
@@ -15,16 +14,19 @@ public class UnitSpawnBuildingCompo : MonoBehaviour, IInitComponent
 
     private WorkBarCompo _workBarCompo;
 
-    public void Initialize(Entity entity)
+    protected override void Awake()
     {
+        base.Awake();
         //_spawnList = new List<EnemyPoolType>();
-        _workBarCompo = entity.GetCompo<WorkBarCompo>();
+        _workBarCompo = GetCompo<WorkBarCompo>();
         _isShowBar = false;
         _isEnable = false;
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
+
         BarVisibleControl();
 
         if (_spawnList.Count == 0) _isEnable = false;

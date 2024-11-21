@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visualSpriteRenderer: {fileID: 879070744492070021}
-  _whatIsBuilding:
+  _whatIsNonOverlap:
     serializedVersion: 2
     m_Bits: 768
   _whatIsEnemy:

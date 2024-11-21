@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Crogen.CrogenPooling;
  
-public class ResourceOre : Entity
+public class ResourceObject : Entity
 {
     [SerializeField] private ResourceSO _resourceSO;
     [SerializeField] private int _resourceGetCount = 2;
