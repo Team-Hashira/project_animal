@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceDict:
     _serializedList:
+    - Key: 2
+      Value: {fileID: 11400000, guid: afa4f1cb59869234e9c045b3b0e640e2, type: 2}
     - Key: 0
       Value: {fileID: 11400000, guid: 373a0894e1282534e88d5ddbb539f28c, type: 2}
     - Key: 1

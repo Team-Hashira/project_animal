@@ -1,5 +1,6 @@
 public enum EResourceType
 {
     Stone,
-    Gold
+    Iron,
+    Wood,
 }
