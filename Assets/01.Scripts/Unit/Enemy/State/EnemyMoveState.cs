@@ -21,7 +21,10 @@ public class EnemyMoveState : UnitState<Enemy>
 
 	public override void Update()
 	{
-		if (_surfaceMovementCompo.FindAndSetTarget())
-			_stateMachine.ChangeState(EEnemyState.Idle);
+		Debug.Log("Move");
+		if(_surfaceMovementCompo.MoveToTarget() == null)
+		{
+			_surfaceMovementCompo.MoveToCoreTower();
+		}
 	}
 }
