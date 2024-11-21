@@ -13,4 +13,11 @@ public class EnemyGenerator : MonoBehaviour
             gameObject.Pop(enemyType, ranPos, Quaternion.identity);
         }
     }
+
+	private void OnDrawGizmos()
+	{
+		Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, _spawnRadius);
+        Gizmos.color = Color.white;
+	}
 }
