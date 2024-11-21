@@ -10,8 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ed9b17438a6c3c47945e9045002a83e, type: 3}
-  m_Name: StoneOre
+  m_Name: BallistaTower
   m_EditorClassIdentifier: 
   statInfos:
   - statType: 0
-    defaultValue: 30
+    defaultValue: 100
+  - statType: 3
+    defaultValue: 10
+  - statType: 7
+    defaultValue: 40

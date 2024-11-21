@@ -1991,6 +1991,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BallistaTower
       objectReference: {fileID: 0}
+    - target: {fileID: 5571065055417485875, guid: 1fd45fb1932bc32488b4edf05e46263c, type: 3}
+      propertyPath: _stat
+      value: 
+      objectReference: {fileID: 11400000, guid: bfff6ae7c7d77fb43a9772ae4111623c, type: 2}
     - target: {fileID: 6727779626247660589, guid: 1fd45fb1932bc32488b4edf05e46263c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.5949711

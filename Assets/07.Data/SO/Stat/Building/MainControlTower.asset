@@ -15,19 +15,3 @@ MonoBehaviour:
   statInfos:
   - statType: 0
     defaultValue: 1000
-  - statType: 1
-    defaultValue: 0
-  - statType: 2
-    defaultValue: 0
-  - statType: 3
-    defaultValue: 10
-  - statType: 4
-    defaultValue: 0
-  - statType: 5
-    defaultValue: 0
-  - statType: 6
-    defaultValue: 0
-  - statType: 7
-    defaultValue: 8
-  - statType: 8
-    defaultValue: 0

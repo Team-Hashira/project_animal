@@ -10,16 +10,13 @@ public class BallistaTower : Building
     [SerializeField] private Transform _ballistaTrm;
 
     [Header("Shoot setting")]
+    [SerializeField] private ProjectilePoolType _arrow;
     [SerializeField] private float _shootDelay;
     private float _currentCountUp;
 
-    [Header("Arrow setting")]
-    [SerializeField] private ProjectilePoolType _arrow;
-    [SerializeField] private int _arrowdamage;
-    [SerializeField] private float _arrowSpeed;
-
     private Unit _target;
     private WorkBarCompo _workBarCompo;
+    private StatCompo _statCompo;
 
     private Collider2D[] hits;
 
@@ -28,6 +25,7 @@ public class BallistaTower : Building
         base.Awake();
 
         _workBarCompo = GetCompo<WorkBarCompo>();
+        _statCompo = GetCompo<StatCompo>();
         _workBarCompo.ShowWorkBar(() => _currentCountUp / _shootDelay);
     }
 
@@ -53,7 +51,7 @@ public class BallistaTower : Building
     private void Shoot()
     {
         Arrow arrow = gameObject.Pop(_arrow, _ballistaTrm.position, _ballistaTrm.rotation) as Arrow;
-        arrow.Init(this, _whatIsEnemy, _arrowSpeed, _arrowdamage);
+        arrow.Init(this, _whatIsEnemy, _statCompo.GetValue(EStatType.Speed), Mathf.RoundToInt(_statCompo.GetValue(EStatType.Damage)));
     }
 
     private void OnDrawGizmos()
