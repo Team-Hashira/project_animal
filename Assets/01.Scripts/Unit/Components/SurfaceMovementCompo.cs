@@ -1,6 +1,4 @@
-using NavMeshPlus.Components;
 using System;
-using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -14,8 +12,11 @@ public class SurfaceMovementCompo : MonoBehaviour, IAfterInitComponent
 	private Transform _targetTrm;
 	private Collider2D[] _colliders;
 
+	private ContactFilter2D _targetFilter;
+
 	private void Awake()
 	{
+		_targetFilter = new ContactFilter2D() { layerMask = _whatIsFindable, useLayerMask = true, useTriggers = true };
 		_colliders = new Collider2D[_maxFindCount];
 	}
 
@@ -37,7 +38,7 @@ public class SurfaceMovementCompo : MonoBehaviour, IAfterInitComponent
 	public Transform MoveToTarget()
 	{
 		Array.Clear(_colliders, 0, _maxFindCount);
-		Physics2D.OverlapCircle(transform.position, detectionRadius, new ContactFilter2D() { layerMask = _whatIsFindable, useLayerMask = true, useTriggers = true }, _colliders);
+		Physics2D.OverlapCircle(transform.position, detectionRadius, _targetFilter, _colliders);
 		Collider2D closestCollider;
 		if (_colliders.Length > 0)
 		{
