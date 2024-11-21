@@ -12,3 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4148f907029786e4a9b33409f0fa1abe, type: 3}
   m_Name: WaveType_01
   m_EditorClassIdentifier: 
+  wave:
+  - generatePosIdx: 0
+    enemyType: 0
+    enemyCount: 10
+    delayTime: 1
+    nextTime: 0
+  - generatePosIdx: 2
+    enemyType: 0
+    enemyCount: 10
+    delayTime: 1
+    nextTime: 5
+  - generatePosIdx: 1
+    enemyType: 0
+    enemyCount: 20
+    delayTime: 0.5
+    nextTime: 0

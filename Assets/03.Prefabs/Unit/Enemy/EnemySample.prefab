@@ -101,9 +101,9 @@ GameObject:
   - component: {fileID: -5187673027613501859}
   - component: {fileID: 3505820458588193468}
   - component: {fileID: 3289287273725173646}
+  - component: {fileID: -5004685812056704560}
   - component: {fileID: 7920236717964970676}
   - component: {fileID: 3241466277121562979}
-  - component: {fileID: -5004685812056704560}
   m_Layer: 7
   m_Name: EnemySample
   m_TagString: Untagged
@@ -218,8 +218,22 @@ MonoBehaviour:
   _agent: {fileID: 7920236717964970676}
   _whatIsFindable:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
   _maxFindCount: 10
+--- !u!114 &-5004685812056704560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7475915146198194076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea6c85a010886f47b1366e991a1ac2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageCaster: {fileID: 0}
+  _damage: 2
 --- !u!195 &7920236717964970676
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -254,20 +268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e39f6090724e4a4a8aadeb042afa2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-5004685812056704560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7475915146198194076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fea6c85a010886f47b1366e991a1ac2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damageCaster: {fileID: 0}
-  _damage: 0
 --- !u!1 &8358616873633733934
 GameObject:
   m_ObjectHideFlags: 0

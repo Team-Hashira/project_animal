@@ -30,12 +30,13 @@ public class WaveManager : MonoSingleton<WaveManager>
 
 	private IEnumerator CoroutineGenerateRoop(WaveDataSO waveDataSO)
 	{
-		yield return new WaitForSeconds(4.0f);
+		if(WaveNumber == 0) 
+			yield return new WaitForSeconds(4.0f);
 
 		//EnemyCount 계산하기
 		EnemyCount = 0;
 		foreach (var waveData in waveDataSO.wave)
-			EnemyCount += waveData.Count;
+			EnemyCount += waveData.enemyCount;
 
 		OnGenerateStartEvent?.Invoke(EnemyCount);
 
@@ -55,8 +56,14 @@ public class WaveManager : MonoSingleton<WaveManager>
 		{
 			WaveData curWaveData = waveDataSO[i];
 			EnemyGenerator enemyGenerator = _enemyGenerators[curWaveData.generatePosIdx];
-			enemyGenerator.OnGenerate(curWaveData.enemyType, curWaveData.Count);
-			yield return new WaitForSeconds(curWaveData.delayTime);
+
+			for (int j = 0; j < curWaveData.enemyCount; j++)
+			{
+				enemyGenerator.OnGenerate(curWaveData.enemyType);
+				yield return new WaitForSeconds(curWaveData.delayTime);
+			}
+
+			yield return new WaitForSeconds(curWaveData.nextTime);
 		}
 		OnGenerateEndEvent?.Invoke();
 		++WaveNumber;
