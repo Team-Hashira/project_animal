@@ -18,7 +18,7 @@ public class CircleDamageCaster2D : DamageCaster2D
     public override void CastOverlap()
     {
         Physics2D.OverlapCircle(transform.position + transform.rotation * GetFinalCenter(center),
-            GetScaledSize(radius), new ContactFilter2D(){useLayerMask = true, layerMask = _whatIsCastable}, _castColliders);
+            GetScaledSize(radius), new ContactFilter2D(){useLayerMask = true, layerMask = _whatIsCastable, useTriggers = true}, _castColliders);
     }
     
     private void OnDrawGizmos()

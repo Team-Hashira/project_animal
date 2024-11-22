@@ -1,37 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &234556060289581239
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4359236533655686044}
-  m_Layer: 0
-  m_Name: MoveDirArrow
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4359236533655686044
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 234556060289581239}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 486650739348339243}
-  m_Father: {fileID: 7096895525235886297}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3056157887360288940
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2188685817022549110}
@@ -108,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 15
+  m_SortingOrder: 20
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 0.34117648}
   m_FlipX: 0
@@ -240,13 +208,13 @@ Transform:
   m_GameObject: {fileID: 6562140581478784511}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.75, y: 6.6, z: -0.027755586}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4588983370171201057}
   - {fileID: 8078901339265374275}
-  - {fileID: 4359236533655686044}
+  - {fileID: 486650739348339243}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4989719733399776980
@@ -261,6 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bfebab901bc2454ea6ac389dc39acc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inputReaderSO: {fileID: 11400000, guid: 289212b3f584fa54587b195452f2ca8f, type: 2}
 --- !u!114 &2674370445805152762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,6 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stat: {fileID: 11400000, guid: b30e0e1db43530e4c92d7c94616f2997, type: 2}
+  _ballistaSprites: {fileID: 0}
 --- !u!114 &8744794826989959969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,13 +336,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4251973b80202fd478dddbd59bfc7b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRadius: 10
   _agent: {fileID: 4306825390594375541}
-  _whatIsFindable:
-    serializedVersion: 2
-    m_Bits: 0
-  _maxFindCount: 10
-  _moveDirArrowTrm: {fileID: 4359236533655686044}
+  _moveDirArrowTrm: {fileID: 0}
 --- !u!114 &5900450575151626006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,7 +351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageCaster: {fileID: 1418886358706609801}
-  _damage: 1
+  _damage: 10
   _attackDelay: 0.4
   _attackChargeVisualTrm: {fileID: 2188685817022549110}
 --- !u!114 &424999575196780937
@@ -428,7 +393,7 @@ Transform:
   m_GameObject: {fileID: 8137315144306617725}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.027755586}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -477,7 +442,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 30
   m_Sprite: {fileID: -1392155228374279905, guid: 51ec7edbafb6bd3469e6d4ce7db28efc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -527,12 +492,12 @@ Transform:
   m_GameObject: {fileID: 8160611942836161460}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.07, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1267534985058065015}
-  m_Father: {fileID: 4359236533655686044}
+  m_Father: {fileID: 7096895525235886297}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1418886358706609801
 MonoBehaviour:
@@ -547,14 +512,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excluded: 0
-  allocationCount: 1
+  allocationCount: 5
   _whatIsCastable:
     serializedVersion: 2
     m_Bits: 1664
   _usingExcludeCast: 1
   excludedDamageCasterList: []
   center: {x: 0, y: 0}
-  radius: 0.5
+  radius: 1
 --- !u!1001 &7488881188701929405
 PrefabInstance:
   m_ObjectHideFlags: 0

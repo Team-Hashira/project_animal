@@ -14,11 +14,14 @@ public class AllyPig : Ally
     //Compo
     private HealthCompo _healthCompo;
 
+    private bool _isSelected = false;
+
     protected override void Awake()
     {
         base.Awake();
         _healthCompo = GetCompo<HealthCompo>();
-        _healthCompo.OnDieEvent += OnDie;
+
+		_healthCompo.OnDieEvent += OnDie;
     }
 
     protected override void OnDestroy()
@@ -40,16 +43,11 @@ public class AllyPig : Ally
     protected override void Update()
     {
         base.Update();
-    }
+	}
 
     private void OnDie()
     {
         //this.Push();
         Debug.Log("Á×À½");
-    }
-
-    public void OnSelect()
-    {
-
     }
 }

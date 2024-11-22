@@ -20,7 +20,7 @@ public class BoxDamageCaster2D : DamageCaster2D
 	public override void CastOverlap()
 	{
 		Physics2D.OverlapBox(transform.position + transform.rotation * GetFinalCenter(center),
-			GetScaledSize(size), transform.rotation.z, new ContactFilter2D(){useLayerMask = true, layerMask = _whatIsCastable}, _castColliders);
+			GetScaledSize(size), transform.rotation.z, new ContactFilter2D(){useLayerMask = true, layerMask = _whatIsCastable, useTriggers = true }, _castColliders);
 	}
 
 	private void OnDrawGizmos()
