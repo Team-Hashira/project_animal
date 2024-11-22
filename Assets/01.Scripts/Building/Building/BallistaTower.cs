@@ -12,7 +12,13 @@ public class BallistaTower : Building
     [Header("Shoot setting")]
     [SerializeField] private ProjectilePoolType _arrow;
     [SerializeField] private float _shootDelay;
-    private float _currentCountUp;
+    private float _currentTime;
+
+    [Header("Animation")]
+    [SerializeField] private SpriteRenderer _bowRenderer;
+    [SerializeField] private SpriteRenderer _arrowRenderer;
+    [SerializeField] private Sprite[] _ballistaSprites;
+    [SerializeField] private Sprite[] _arrowSprites;
 
     private Unit _target;
     private WorkBarCompo _workBarCompo;
@@ -26,26 +32,29 @@ public class BallistaTower : Building
 
         _workBarCompo = GetCompo<WorkBarCompo>();
         _statCompo = GetCompo<StatCompo>();
-        _workBarCompo.ShowWorkBar(() => _currentCountUp / _shootDelay);
+        _workBarCompo.ShowWorkBar(() => _currentTime / _shootDelay);
     }
 
     protected override void Update()
     {
         base.Update();
 
-        _currentCountUp += Time.deltaTime;
+        _currentTime += Time.deltaTime;
 
         hits = Physics2D.OverlapCircleAll(_ballistaTrm.position, _radius, _whatIsEnemy);
         if (hits.Length != 0 && hits[0].TryGetComponent<Unit>(out _target))
         {
             _ballistaTrm.rotation = Quaternion.LookRotation(Vector3.back, _target.transform.position - _ballistaTrm.position);
 
-            if (_currentCountUp > _shootDelay)
+            if (_currentTime > _shootDelay)
             {
-                _currentCountUp = 0;
+                _currentTime = 0;
                 Shoot();
             }
         }
+        int spriteIndex = Mathf.Clamp(Mathf.RoundToInt((_currentTime * 3) / _shootDelay), 0, 2);
+        _bowRenderer.sprite = _ballistaSprites[spriteIndex];
+        _arrowRenderer.sprite = _arrowSprites[spriteIndex];
     }
 
     private void Shoot()
