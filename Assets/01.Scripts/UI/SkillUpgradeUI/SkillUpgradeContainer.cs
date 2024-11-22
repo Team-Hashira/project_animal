@@ -55,7 +55,6 @@ public class SkillUpgradeContainer : MonoBehaviour
 
 	public void HandleLevelUp(int _)
 	{
-		Debug.Log("¿­·È´Âµ¥?");
 		++_openCount;
 	}
 

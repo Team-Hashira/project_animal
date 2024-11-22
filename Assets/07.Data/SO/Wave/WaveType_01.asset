@@ -15,16 +15,16 @@ MonoBehaviour:
   wave:
   - generatePosIdx: 0
     enemyType: 0
-    enemyCount: 10
+    enemyCount: 2
     delayTime: 1
     nextTime: 0
   - generatePosIdx: 2
     enemyType: 0
-    enemyCount: 10
+    enemyCount: 3
     delayTime: 1
-    nextTime: 5
+    nextTime: 0
   - generatePosIdx: 1
     enemyType: 0
-    enemyCount: 20
-    delayTime: 0.5
+    enemyCount: 5
+    delayTime: 0.3
     nextTime: 0
