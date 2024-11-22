@@ -4,7 +4,8 @@ public class UI_PauseScene : UI_Scene
 {
     public enum Images
     {
-        Image_BackGround
+        Image_BackGround,
+        Image_Context
     }
 
     public enum Sliders
@@ -24,9 +25,11 @@ public class UI_PauseScene : UI_Scene
 
         BindImages(typeof(Images));
         BindSliders(typeof(Sliders));
+        BindToggle(typeof(Toggles));
 
-        GetImages((int)Images.Image_BackGround).transform.position = new Vector3(0, 0, 0);
+        GetImages((int)Images.Image_Context).transform.position = new Vector3(0, 0, 0);
         GetSlider((int)Sliders.Slider_Sound).value = 0.5f;
+        GetToggle((int)Toggles.Toggle_Test).isOn = false;
 
         return true;
     }
