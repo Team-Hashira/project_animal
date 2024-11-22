@@ -30,6 +30,9 @@ public class StatCompo : MonoBehaviour, IInitComponent
 
     private Entity _owner;
 
+    [Header("Animation")]
+    [SerializeField] private Sprite _ballistaSprites;
+
     public void Initialize(Entity entity)
     {
         _owner = entity;

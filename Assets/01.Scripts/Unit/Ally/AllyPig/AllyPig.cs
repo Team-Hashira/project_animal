@@ -6,7 +6,7 @@ public enum EAllyPigState
     Idle, Move, Attack, Dead
 }
 
-public class AllyPig : Unit, IAlly
+public class AllyPig : Ally
 {
     public string OriginPoolType { get; set; }
     //GameObject IPoolingObject.gameObject { get; set; }
@@ -51,10 +51,5 @@ public class AllyPig : Unit, IAlly
     public void OnSelect()
     {
 
-    }
-
-    public void Select(bool onSelect)
-    {
-        GetCompo<VisualCompo>().OutlineActive(onSelect);
     }
 }
