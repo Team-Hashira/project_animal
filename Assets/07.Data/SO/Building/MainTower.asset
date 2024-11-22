@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MainTower
   m_EditorClassIdentifier: 
   buildingName: "\uBA54\uC778\uD0C0\uC6CC"
-  sprite: {fileID: -8184243028988634350, guid: acd2f892e3008e94cbbe29dc97d572c9, type: 3}
+  sprite: {fileID: 1170115753450382605, guid: 0b0e545b07c134741b67e052db806975, type: 3}
   recipe:
     _serializedList:
     - Key: 0

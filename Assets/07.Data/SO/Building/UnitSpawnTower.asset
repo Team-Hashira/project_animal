@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: UnitSpawnTower
   m_EditorClassIdentifier: 
   buildingName: "\uC720\uB2DB \uC18C\uD658\uC18C"
-  sprite: {fileID: -1488026890190739441, guid: db9203958bd4c274380ebeb62776b063, type: 3}
+  sprite: {fileID: 6376150620646718604, guid: 16e51a3e2f11ab442a347bef1a5100e8, type: 3}
   recipe:
     _serializedList:
     - Key: 2

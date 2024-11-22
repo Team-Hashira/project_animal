@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3632355447969460350}
@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1488026890190739441, guid: db9203958bd4c274380ebeb62776b063, type: 3}
+  m_Sprite: {fileID: 6376150620646718604, guid: 16e51a3e2f11ab442a347bef1a5100e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -136,7 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8879d2b65d5d64c878da92102f13ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _visualSpriteRenderer: {fileID: 5374524305638846385}
   _whatIsNonOverlap:
     serializedVersion: 2
     m_Bits: 768
@@ -227,12 +226,20 @@ PrefabInstance:
       value: StateBar
       objectReference: {fileID: 0}
     - target: {fileID: 1725965205625235454, guid: f938a817bc8d50741a01eef8dd05e21e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725965205625235454, guid: f938a817bc8d50741a01eef8dd05e21e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725965205625235454, guid: f938a817bc8d50741a01eef8dd05e21e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1725965205625235454, guid: f938a817bc8d50741a01eef8dd05e21e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.804
+      value: 1.68
       objectReference: {fileID: 0}
     - target: {fileID: 1725965205625235454, guid: f938a817bc8d50741a01eef8dd05e21e, type: 3}
       propertyPath: m_LocalPosition.z
