@@ -33,7 +33,9 @@ public class ResourceObject : Entity
     private void HandleDieEvent()
     {
         _healthCompo.Resurrection();
-		gameObject.Pop(_getResourceEffect, transform.position, Quaternion.identity);
+		ParticleSystem effect = (gameObject.Pop(_getResourceEffect, transform.position, Quaternion.identity) as MonoBehaviour).GetComponent<ParticleSystem>();
+        effect.textureSheetAnimation.SetSprite(0, _resourceSO.sprite);
+        
         ResourceManager.Instance.AddResource(_resourceSO.resourceType, Random.Range(_resourceGetCount.x, _resourceGetCount.y));
     }
 }
