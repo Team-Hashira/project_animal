@@ -11,10 +11,10 @@ public class SelectRect : MonoBehaviour
     private Vector3 _startPos;
     private bool _isDrag;
     private SpriteRenderer _spriteRenderer;
-    private Collider2D[] _colliders;
+    private Collider2D[] _colliders = new Collider2D[100];
     private Collider2D[] _selectedObj;
 
-    [SerializeField] private LayerMask _whatIsTarget;
+    [SerializeField] private ContactFilter2D _whatIsTarget;
 
     private void Awake()
     {
@@ -26,9 +26,10 @@ public class SelectRect : MonoBehaviour
 
     private void HandleRightClickEvent(bool isDown)
     {
+
         if (isDown)
         {
-            _startPos = Camera.main.ScreenToWorldPoint(_input.MousePosition);
+			_startPos = Camera.main.ScreenToWorldPoint(_input.MousePosition);
             _startPos.z = 0;
             transform.localScale = Vector3.zero;
             _spriteRenderer.enabled = true;
@@ -39,43 +40,43 @@ public class SelectRect : MonoBehaviour
             transform.localScale = Vector3.zero;
             _spriteRenderer.enabled = false;
             _isDrag = false;
+
+            //드래그 끝났을 때 실행되는 코드
         }
     }
 
     public void Update()
     {
-        if (_isDrag)
+        if (_isDrag == false) return;
+        SizeSetting();
+
+        //드래그일 때 실행되는 코드
+         Physics2D.OverlapBox(transform.position, transform.localScale, 0, _whatIsTarget, _colliders);
+
+        if (_selectedObj == null) return;
+        if (_colliders.Length > 0)
         {
-            SizeSetting();
-
-            _colliders = Physics2D.OverlapBoxAll(transform.position, transform.localScale, 0, _whatIsTarget);
-
-            if (_selectedObj != null)
+			_colliders.Except(_selectedObj).ToList().ForEach(coll =>
             {
-                if (_colliders.Length > 0)
+                if (coll == null) return;
+                if (coll.TryGetComponent(out ISelectable selectable))
                 {
-                    _colliders.Except(_selectedObj).ToList().ForEach(coll =>
-                    {
-                        if (coll.TryGetComponent(out ISelectable selectable))
-                        {
-                            selectable.Select(true);
-                        }
-                    });
+                    selectable.Select(true);
                 }
-                if (_selectedObj.Length > 0)
-                {
-                    _selectedObj.Except(_colliders).ToList().ForEach(coll =>
-                    {
-                        if (coll.TryGetComponent(out ISelectable selectable))
-                        {
-                            selectable.Select(false);
-                        }
-                    });
-                }
-            }
-            
-            _selectedObj = _colliders;
+            });
         }
+        if (_selectedObj.Length > 0)
+        {
+            _selectedObj.Except(_colliders).ToList().ForEach(coll =>
+            {
+				if (coll == null) return;
+				if (coll.TryGetComponent(out ISelectable selectable))
+                {
+                    selectable.Select(false);
+                }
+            });
+        }
+        _selectedObj = _colliders;
     }
 
     private void SizeSetting()

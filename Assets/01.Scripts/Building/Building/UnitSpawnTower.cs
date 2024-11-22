@@ -1,8 +1,9 @@
 using Crogen.CrogenPooling;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class UnitSpawnTower : Building
+public class UnitSpawnTower : Building, ISelectable
 {
     [Header("Spawn setting")]
     [SerializeField] private float _spawnDelay;
@@ -13,8 +14,19 @@ public class UnitSpawnTower : Building
     private float _currentSpawnTime;
 
     private WorkBarCompo _workBarCompo;
+    private VisualCompo _visualCompo;
 
-    protected override void Awake()
+	public void Select(bool onSelect)
+	{
+        _visualCompo ??= GetCompo<VisualCompo>();
+        _visualCompo.OutlineActive(onSelect);
+	}
+
+	public void SelectComplete()
+	{
+	}
+
+	protected override void Awake()
     {
         base.Awake();
         //_spawnList = new List<EnemyPoolType>();

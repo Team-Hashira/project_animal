@@ -23,6 +23,7 @@ public class SkillUpgradeContainer : MonoBehaviour
 		_canvasGroup = GetComponent<CanvasGroup>();
 		_rectTransform = transform as RectTransform;
 		_canvasGroup.alpha = 0;
+		_canvasGroup.blocksRaycasts = false;
 		_canvasGroup.interactable = false;
 		slots = GetComponentsInChildren<SkillUpgradeSlot>();
 	}
@@ -134,6 +135,7 @@ public class SkillUpgradeContainer : MonoBehaviour
 		seq.SetUpdate(true);
 		if (isShow)
 		{
+			_canvasGroup.blocksRaycasts = true;
 			seq.AppendCallback(() => _rectTransform.anchoredPosition = new Vector2(0, -334f))
 				.AppendCallback(() => _canvasGroup.interactable = false)
 				.Append(_rectTransform.DOAnchorPosY(0, _fadeDuration))
@@ -143,6 +145,7 @@ public class SkillUpgradeContainer : MonoBehaviour
 		}
 		else
 		{
+			_canvasGroup.blocksRaycasts = false;
 			seq.AppendCallback(() => _rectTransform.anchoredPosition = Vector2.zero)
 				.AppendCallback(() => _canvasGroup.interactable = false)
 				.Append(_rectTransform.DOAnchorPosY(-334f, _fadeDuration))
