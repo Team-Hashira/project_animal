@@ -30,8 +30,11 @@ MonoBehaviour:
         keys:
         - globalObjectIdString: GlobalObjectId_V1-2-3f8f6780bd566064494b732f464adb8e-505914887-0
         - globalObjectIdString: GlobalObjectId_V1-2-3f8f6780bd566064494b732f464adb8e-538685182-0
+        - globalObjectIdString: GlobalObjectId_V1-2-3f8f6780bd566064494b732f464adb8e-1753623825-0
         values:
         - colorIndex: 2
           iconNameOrGuid: Settings Icon
         - colorIndex: 3
           iconNameOrGuid: Camera Icon
+        - colorIndex: 4
+          iconNameOrGuid: Light Icon
