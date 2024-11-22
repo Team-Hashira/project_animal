@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 4306825390594375541}
   - component: {fileID: 1697906124904403027}
   - component: {fileID: 5900450575151626006}
+  - component: {fileID: 424999575196780937}
   m_Layer: 11
   m_Name: PigUnit
   m_TagString: Untagged
@@ -388,6 +389,18 @@ MonoBehaviour:
   _damage: 1
   _attackDelay: 0.4
   _attackChargeVisualTrm: {fileID: 2188685817022549110}
+--- !u!114 &424999575196780937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6562140581478784511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e39f6090724e4a4a8aadeb042afa2bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8137315144306617725
 GameObject:
   m_ObjectHideFlags: 0
