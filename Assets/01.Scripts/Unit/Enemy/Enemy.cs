@@ -35,6 +35,8 @@ public class Enemy : Unit, IPoolingObject
 
 	public void OnPush()
 	{
+		--WaveManager.Instance.EnemyCount;
+		LevelManager.Instance.XP += 1.5f;
 		DisposeComponent();
 	}
 

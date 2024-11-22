@@ -14,7 +14,7 @@ public class WaveManager : MonoSingleton<WaveManager>
 	public event Action OnGenerateEndEvent;
 
 	//Values
-	public int EnemyCount {get; private set;}
+	public int EnemyCount {get; set;}
 	public int WaveNumber {get; private set;}
 
 	private void Start()
