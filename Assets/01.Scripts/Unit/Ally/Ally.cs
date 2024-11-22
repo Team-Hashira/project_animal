@@ -13,7 +13,11 @@ public class Ally : Unit, ISelectable
         _isSelected = onSelect;
     }
 
-    protected override void Awake()
+	public void SelectComplete()
+	{
+	}
+
+	protected override void Awake()
     {
         base.Awake();
 		_inputReaderSO.OnLeftClickEvnet += HandleMoveToMousePos;
