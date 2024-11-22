@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8184243028988634350, guid: acd2f892e3008e94cbbe29dc97d572c9, type: 3}
+  m_Sprite: {fileID: 1170115753450382605, guid: 0b0e545b07c134741b67e052db806975, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -136,7 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3701fe7a4691ad0429d8a88525bb3bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _visualSpriteRenderer: {fileID: 879070744492070021}
   _whatIsNonOverlap:
     serializedVersion: 2
     m_Bits: 768
@@ -221,11 +220,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2693864924578622743, guid: f422a4b1b8b5f734ab4726eca04574b9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.9
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 2693864924578622743, guid: f422a4b1b8b5f734ab4726eca04574b9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2693864924578622743, guid: f422a4b1b8b5f734ab4726eca04574b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -233,7 +232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2693864924578622743, guid: f422a4b1b8b5f734ab4726eca04574b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.861
+      value: 2.39
       objectReference: {fileID: 0}
     - target: {fileID: 2693864924578622743, guid: f422a4b1b8b5f734ab4726eca04574b9, type: 3}
       propertyPath: m_LocalPosition.z

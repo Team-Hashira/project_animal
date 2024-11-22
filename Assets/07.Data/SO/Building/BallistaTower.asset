@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BallistaTower
   m_EditorClassIdentifier: 
   buildingName: "\uBC1C\uB9AC\uC2A4\uD0C0"
-  sprite: {fileID: 4718626365000619479, guid: 97a7290a6ff43a44eb036d61982b864d, type: 3}
+  sprite: {fileID: 1590238348396982857, guid: 8294583bb59781a4dad97ae06f10478e, type: 3}
   recipe:
     _serializedList:
     - Key: 2
