@@ -16,6 +16,8 @@ MonoBehaviour:
   sprite: {fileID: -1488026890190739441, guid: db9203958bd4c274380ebeb62776b063, type: 3}
   recipe:
     _serializedList:
-    - Key: 1
+    - Key: 2
       Value: 10
-  building: {fileID: 2238758393151771466, guid: bf53a479adfb05b47ac7a898644a892a, type: 3}
+    - Key: 0
+      Value: 10
+  building: {fileID: 700620749508247135, guid: f58d0d5cdd9473045b32e6af2d20d5d8, type: 3}

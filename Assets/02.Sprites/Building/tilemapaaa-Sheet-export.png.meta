@@ -1,0 +1,337 @@
+fileFormatVersion: 2
+guid: 8294583bb59781a4dad97ae06f10478e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5302096705434096246
+    second: tilemapaaa-Sheet-export_0
+  - first:
+      213: -6143300755418616461
+    second: tilemapaaa-Sheet-export_1
+  - first:
+      213: 1505581230915340898
+    second: tilemapaaa-Sheet-export_2
+  - first:
+      213: -5111973385683195473
+    second: tilemapaaa-Sheet-export_3
+  - first:
+      213: 1590238348396982857
+    second: tilemapaaa-Sheet-export_4
+  - first:
+      213: 3687481585195959232
+    second: tilemapaaa-Sheet-export_5
+  - first:
+      213: -4873827635912087387
+    second: tilemapaaa-Sheet-export_6
+  - first:
+      213: 8585551201283807409
+    second: tilemapaaa-Sheet-export_7
+  - first:
+      213: 7255857118375355400
+    second: tilemapaaa-Sheet-export_8
+  - first:
+      213: -5721116285887918546
+    second: tilemapaaa-Sheet-export_9
+  - first:
+      213: 2738791539316783466
+    second: tilemapaaa-Sheet-export_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tilemapaaa-Sheet-export_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 77
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8de4db532b2b66b0800000000000000
+      internalID: -5302096705434096246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapaaa-Sheet-export_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 77
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26a44311726e4e410800000000000000
+      internalID: 1505581230915340898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapaaa-Sheet-export_4
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 47
+        width: 34
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 942f7683a59a11610800000000000000
+      internalID: 1590238348396982857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapaaa-Sheet-export_5
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 47
+        width: 34
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c34661f6f09c2330800000000000000
+      internalID: 3687481585195959232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapaaa-Sheet-export_6
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 47
+        width: 34
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a86af8769fac5cb0800000000000000
+      internalID: -4873827635912087387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapaaa-Sheet-export_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 10
+        width: 8
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 804a0c12b9bf1b460800000000000000
+      internalID: 7255857118375355400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapaaa-Sheet-export_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 10
+        width: 8
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9394d5f777293964c8fec3d8ef803500
+      internalID: -6143300755418616461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapaaa-Sheet-export_3
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 10
+        width: 8
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33bdddad4618c2c408430ffb55635fee
+      internalID: -5111973385683195473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: cb2d86befd1868d44835c8c615c73d7d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tilemapaaa-Sheet-export_0: -5302096705434096246
+      tilemapaaa-Sheet-export_1: -6143300755418616461
+      tilemapaaa-Sheet-export_10: 2738791539316783466
+      tilemapaaa-Sheet-export_2: 1505581230915340898
+      tilemapaaa-Sheet-export_3: -5111973385683195473
+      tilemapaaa-Sheet-export_4: 1590238348396982857
+      tilemapaaa-Sheet-export_5: 3687481585195959232
+      tilemapaaa-Sheet-export_6: -4873827635912087387
+      tilemapaaa-Sheet-export_7: 8585551201283807409
+      tilemapaaa-Sheet-export_8: 7255857118375355400
+      tilemapaaa-Sheet-export_9: -5721116285887918546
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

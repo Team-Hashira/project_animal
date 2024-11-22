@@ -140,9 +140,9 @@ MonoBehaviour:
   _whatIsNonOverlap:
     serializedVersion: 2
     m_Bits: 768
-  _spawnDelay: 0
+  _spawnDelay: 1
   _isEnable: 0
-  _spawnList: 
+  _spawnList: 0000000000000000000000000000000000000000
 --- !u!61 &7452239922948165482
 BoxCollider2D:
   m_ObjectHideFlags: 0
