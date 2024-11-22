@@ -1579,7 +1579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7353697173023667140, guid: 2b6469e12e0387047866083956abc91e, type: 3}
       propertyPath: m_Name
-      value: SilverOre
+      value: IronOre
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1754,6 +1754,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2567055177137469070, guid: f457122c7550f5146a37093404647b27, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6893501002306531149, guid: f457122c7550f5146a37093404647b27, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.677592
@@ -1796,7 +1800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7353697173023667140, guid: f457122c7550f5146a37093404647b27, type: 3}
       propertyPath: m_Name
-      value: Wood
+      value: Tree
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
