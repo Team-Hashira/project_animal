@@ -4,5 +4,6 @@
 	MoveSpeedUp,
 	AttackSpeedUp,
 	AnimalFriends,
-	DamageUp
+	DamageUp,
+	AutoBlade
 }

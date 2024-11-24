@@ -4800,6 +4800,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6591360564673957380, guid: 1a2aac070480b7c4d92d0894c9eb2ae5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2075358136}
+    - targetCorrespondingSourceObject: {fileID: 6591360564673957380, guid: 1a2aac070480b7c4d92d0894c9eb2ae5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2075358137}
   m_SourcePrefab: {fileID: 100100000, guid: 1a2aac070480b7c4d92d0894c9eb2ae5, type: 3}
 --- !u!4 &1498024766 stripped
 Transform:
@@ -6437,9 +6440,36 @@ MonoBehaviour:
   _autoUseType: 0
   _compareMode: 0
   _targetValue: 0
+  player: {fileID: 0}
   whatIsEnemy:
     serializedVersion: 2
     m_Bits: 0
+--- !u!114 &2075358137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075358134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65cd6c5e6bdaec34390c6a948d2b623b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canUse: 1
+  skillEnabled: 0
+  _cooldown: 1.5
+  level: 1
+  isConditionalSkill: 0
+  _autoUseType: 0
+  _compareMode: 0
+  _targetValue: 0
+  player: {fileID: 0}
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 128
+  _detectSize: {x: 4, y: 3}
+  _attackEffect: {fileID: 6178457460284865668, guid: 970c5988792b4644fb886fece5960426, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
