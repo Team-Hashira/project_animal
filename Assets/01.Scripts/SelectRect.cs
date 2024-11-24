@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class SelectRect : MonoBehaviour
 {
@@ -11,8 +10,8 @@ public class SelectRect : MonoBehaviour
     private Vector3 _startPos;
     private bool _isDrag;
     private SpriteRenderer _spriteRenderer;
-    private Collider2D[] _colliders = new Collider2D[100];
-    private Collider2D[] _selectedObj;
+    private Collider2D[] _colliders = new Collider2D[50];
+    private List<Collider2D> _selectedCollList = new List<Collider2D>();
 
     [SerializeField] private ContactFilter2D _whatIsTarget;
 
@@ -24,10 +23,14 @@ public class SelectRect : MonoBehaviour
         _input.OnRightClickEvnet += HandleRightClickEvent;
     }
 
-    private void HandleRightClickEvent(bool isDown)
-    {
+	private void OnDestroy()
+	{
+		_input.OnRightClickEvnet -= HandleRightClickEvent;
+	}
 
-        if (isDown)
+	private void HandleRightClickEvent(bool isDown)
+    {
+		if (isDown)
         {
 			_startPos = Camera.main.ScreenToWorldPoint(_input.MousePosition);
             _startPos.z = 0;
@@ -42,6 +45,14 @@ public class SelectRect : MonoBehaviour
             _isDrag = false;
 
             //드래그 끝났을 때 실행되는 코드
+            foreach (var collider in _colliders)
+            {
+                if(collider == null) continue;
+				if (collider.TryGetComponent(out ISelectable selectable))
+				{
+					selectable.SelectComplete();
+				}
+			}
         }
     }
 
@@ -51,32 +62,33 @@ public class SelectRect : MonoBehaviour
         SizeSetting();
 
         //드래그일 때 실행되는 코드
-         Physics2D.OverlapBox(transform.position, transform.localScale, 0, _whatIsTarget, _colliders);
-
-        if (_selectedObj == null) return;
-        if (_colliders.Length > 0)
+        if (Physics2D.OverlapBox(transform.position, transform.localScale, 0, _whatIsTarget, _colliders) <= 0)
         {
-			_colliders.Except(_selectedObj).ToList().ForEach(coll =>
+            _colliders.Except(_selectedCollList).ToList().ForEach(coll =>
             {
                 if (coll == null) return;
                 if (coll.TryGetComponent(out ISelectable selectable))
                 {
-                    selectable.Select(true);
-                }
-            });
-        }
-        if (_selectedObj.Length > 0)
-        {
-            _selectedObj.Except(_colliders).ToList().ForEach(coll =>
-            {
-				if (coll == null) return;
-				if (coll.TryGetComponent(out ISelectable selectable))
-                {
+                    Debug.Log("End");
                     selectable.Select(false);
                 }
             });
+            _selectedCollList.Clear();
+            Array.Clear(_colliders, 0, _colliders.Length);
         }
-        _selectedObj = _colliders;
+        else
+        {
+            _colliders.Except(_selectedCollList).ToList().ForEach(coll =>
+            {
+                if (coll == null) return;
+                if (coll.TryGetComponent(out ISelectable selectable))
+                {
+                    Debug.Log("Start");
+                    selectable.Select(true);
+                    _selectedCollList.Add(coll);
+                }
+            });
+        }
     }
 
     private void SizeSetting()

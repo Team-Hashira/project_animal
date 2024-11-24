@@ -8,7 +8,7 @@ public abstract class DamageCaster2D : MonoBehaviour
 	public bool excluded;
 	public int allocationCount = 32;
 	[SerializeField] protected LayerMask _whatIsCastable;
-	protected Collider2D[] _castColliders;
+	[SerializeField] protected Collider2D[] _castColliders;
 	[SerializeField] private bool _usingExcludeCast = true;
 	public List<DamageCaster2D> excludedDamageCasterList;
 
@@ -39,39 +39,60 @@ public abstract class DamageCaster2D : MonoBehaviour
 
 		//제외
 		if (_usingExcludeCast)
-			ExcludeCast(_castColliders);
+			ExcludeCast();
 
-        if (_castColliders[0] == null)
+		if (_castColliders.Length == 0)
 			return;
-
-        OnCasterSuccessEvent?.Invoke();
-
-		//데미지 입히기
-		bool isSuccessDamageCast = false;
-        for (int i = 0; i < _castColliders.Length; ++i)
+		if (_castColliders[0] != null)
 		{
-			if (_castColliders[i] == null) break;
+			OnCasterSuccessEvent?.Invoke();
 
-            if (_castColliders[i].TryGetComponent(out IDamageable damageable))
+			//데미지 입히기
+			bool isSuccessDamageCast = false;
+			for (int i = 0; i < _castColliders.Length; ++i)
 			{
-				damageable.ApplyDamage(damage, mainStatType, stat);
-				isSuccessDamageCast = true;
-            }
-		}
-		if (isSuccessDamageCast)
-            OnDamageCastSuccessEvent?.Invoke();
+				if (_castColliders[i] == null) break;
 
-        //이거 내부적으로 메모리를 직접 초기화해서 가벼움
-        Array.Clear(_castColliders, 0, _castColliders.Length);
+				if (_castColliders[i].TryGetComponent(out IDamageable damageable))
+				{
+					damageable.ApplyDamage(damage, mainStatType, stat);
+					isSuccessDamageCast = true;
+				}
+			}
+			if (isSuccessDamageCast)
+				OnDamageCastSuccessEvent?.Invoke();
+		}
+
+		ArrayReset();
 	}
 
-	protected void ExcludeCast(Collider2D[] colliders)
+	protected void ExcludeCast()
 	{
+		Debug.Log("ExcludeCast");
 		foreach (var excludeCaster in excludedDamageCasterList)
 		{
 			excludeCaster.CastOverlap();
-			colliders = colliders.Except(excludeCaster._castColliders).ToArray();
+			int i = 0;
+			var exceptedColls = _castColliders.Except(excludeCaster._castColliders).ToArray();
+			ArrayReset();
+			if (exceptedColls.Length != 0)
+			{
+				foreach (var coll in exceptedColls)
+				{
+					Debug.Log(_castColliders[i]);
+					_castColliders[i] = coll;
+					++i;
+				}
+			}
+			Debug.Log("Resedt");
+			excludeCaster.ArrayReset();
 		}
+	}
+
+	private void ArrayReset()
+	{
+		//이거 내부적으로 메모리를 직접 초기화해서 가벼움
+		Array.Clear(_castColliders, 0, _castColliders.Length);
 	}
 
 	private void OnValidate()

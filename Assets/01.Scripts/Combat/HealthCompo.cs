@@ -27,10 +27,12 @@ public class HealthCompo : MonoBehaviour, IAfterInitComponent
     {
         _maxHealth = _owner.GetCompo<StatCompo>().GetElement(EStatType.MaxHealth);
         _isInvincible = _maxHealth == null;
-        Health = MaxHealth;
-    }
+        _isDie = false;
+		Health = MaxHealth;
+		OnHealthChangedEvent?.Invoke(0, Health, true);
+	}
 
-    public void ApplyDamage(int damage, bool isChangeVisible = true)
+	public void ApplyDamage(int damage, bool isChangeVisible = true)
     {
         if (_isDie) return;
 

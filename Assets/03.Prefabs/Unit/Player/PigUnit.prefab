@@ -210,7 +210,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4588983370171201057}
   - {fileID: 8078901339265374275}
@@ -243,7 +243,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stat: {fileID: 11400000, guid: b30e0e1db43530e4c92d7c94616f2997, type: 2}
-  _ballistaSprites: {fileID: 0}
 --- !u!114 &8744794826989959969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -516,7 +515,7 @@ MonoBehaviour:
   _whatIsCastable:
     serializedVersion: 2
     m_Bits: 1664
-  _usingExcludeCast: 1
+  _usingExcludeCast: 0
   excludedDamageCasterList: []
   center: {x: 0, y: 0}
   radius: 1
