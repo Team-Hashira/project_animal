@@ -32,7 +32,7 @@ public class UnitSpawnTower : Building, ISelectable
         //_spawnList = new List<EnemyPoolType>();
         _workBarCompo = GetCompo<WorkBarCompo>();
         _isShowBar = false;
-        _isEnable = false;
+        _isEnable = true;
     }
 
     protected override void Update()

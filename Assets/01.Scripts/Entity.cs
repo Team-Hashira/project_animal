@@ -18,7 +18,8 @@ public class Entity : MonoBehaviour, IDamageable
     public void ApplyDamage(int attackCoefficient, EStatType baseStatType, StatCompo harmerStat)
     {
         //int damage = DamageCalculator.CalculateDamage(attackCoefficient, baseStatType, harmerStat, GetCompo<StatCompo>());
-        GetCompo<HealthCompo>().ApplyDamage(attackCoefficient);
+		GetCompo<HealthCompo>().ApplyDamage(attackCoefficient);
+        OnHitEvent?.Invoke();
     }
 
     protected virtual void Awake()
