@@ -15,31 +15,31 @@ MonoBehaviour:
   wave:
   - generatePosIdx: 0
     enemyType: 0
-    enemyCount: 1
-    delayTime: 0
-    nextTime: 0
-  - generatePosIdx: 1
-    enemyType: 0
-    enemyCount: 1
+    enemyCount: 2
     delayTime: 0
     nextTime: 0
   - generatePosIdx: 2
     enemyType: 0
-    enemyCount: 1
+    enemyCount: 2
     delayTime: 0
     nextTime: 0
+  - generatePosIdx: 1
+    enemyType: 0
+    enemyCount: 2
+    delayTime: 0
+    nextTime: 0
+  - generatePosIdx: 2
+    enemyType: 0
+    enemyCount: 10
+    delayTime: 0.1
+    nextTime: 1
+  - generatePosIdx: 1
+    enemyType: 0
+    enemyCount: 10
+    delayTime: 0.1
+    nextTime: 1
   - generatePosIdx: 0
     enemyType: 0
     enemyCount: 10
-    delayTime: 0.1
-    nextTime: 2
-  - generatePosIdx: 1
-    enemyType: 0
-    enemyCount: 10
-    delayTime: 0.1
-    nextTime: 2
-  - generatePosIdx: 2
-    enemyType: 0
-    enemyCount: 1
     delayTime: 0
-    nextTime: 0
+    nextTime: 60
