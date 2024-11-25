@@ -38,11 +38,7 @@ public class LevelManager : MonoSingleton<LevelManager>
 
 	private void Update()
 	{
-		//디버그용
-		if(Input.GetKey(KeyCode.Space))
-		{
-			XP += 1.5f;
-		}
+		
 	}
 
 	private void MaxXPUp()

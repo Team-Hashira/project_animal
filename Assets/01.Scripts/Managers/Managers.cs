@@ -1,8 +1,4 @@
-using System.Resources;
-using System.Runtime.Serialization;
-using UnityEditor.EditorTools;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Managers : MonoBehaviour
 {
