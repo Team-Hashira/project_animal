@@ -32,4 +32,4 @@ MonoBehaviour:
     enemyType: 0
     enemyCount: 4
     delayTime: 0.3
-    nextTime: 0
+    nextTime: 60
