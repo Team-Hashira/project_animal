@@ -61,7 +61,7 @@ public class SkillUpgradeSlot : MonoBehaviour
         Sequence seq = DOTween.Sequence();
         seq.SetUpdate(true);
 		seq.AppendCallback(() => _rectTransform.anchoredPosition = new Vector2(_rectTransform.anchoredPosition.x, 1200))
-			.Append(_rectTransform.DOAnchorPosY(0, 0.2f));
+			.Append(_rectTransform.DOAnchorPosY(0, 0.15f));
 
 		return seq;
     }
@@ -70,7 +70,7 @@ public class SkillUpgradeSlot : MonoBehaviour
     {
         Sequence seq = DOTween.Sequence();
         seq.SetUpdate(true);
-		seq.Append(_rectTransform.DOAnchorPosY(1200, 0.2f));
+		seq.Append(_rectTransform.DOAnchorPosY(1200, 0.15f));
 
         return seq;
     }

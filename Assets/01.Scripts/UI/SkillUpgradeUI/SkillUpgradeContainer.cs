@@ -146,9 +146,9 @@ public class SkillUpgradeContainer : MonoBehaviour
             _canvasGroup.blocksRaycasts = true;
 			_canvasGroup.interactable = false;
             seq.AppendCallback(() => _slots[1].Show())
-                .AppendInterval(0.05f)
+                .AppendInterval(0.07f)
                 .AppendCallback(() => _slots[0].Show())
-                .AppendInterval(0.05f)
+                .AppendInterval(0.07f)
                 .AppendCallback(() =>
                 {
 					_slots[2].Show()
