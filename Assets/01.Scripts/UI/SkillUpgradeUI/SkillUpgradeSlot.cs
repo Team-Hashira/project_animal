@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using TMPro;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class SkillUpgradeSlot : MonoBehaviour
 	private SkillManager _skillManager;
 
 	private Button _button;
+	private RectTransform _rectTransform;
 	public event Action OnSelectedEndEvent;
 	private SkillType _currentSkillType;
 
@@ -20,7 +22,10 @@ public class SkillUpgradeSlot : MonoBehaviour
 	{
 		_button = GetComponent<Button>();
 		_button.onClick.AddListener(HandleSelectSlot);
-	}
+
+		_rectTransform = transform as RectTransform;
+
+    }
 
 	private void Start()
 	{
@@ -50,4 +55,23 @@ public class SkillUpgradeSlot : MonoBehaviour
 			_levelText.text = "New";
 		_descriptionText.text = uiData.description;
 	}
+
+	public Sequence Show()
+    {
+        Sequence seq = DOTween.Sequence();
+        seq.SetUpdate(true);
+		seq.AppendCallback(() => _rectTransform.anchoredPosition = new Vector2(_rectTransform.anchoredPosition.x, 1200))
+			.Append(_rectTransform.DOAnchorPosY(0, 0.2f));
+
+		return seq;
+    }
+
+	public Sequence Hide()
+    {
+        Sequence seq = DOTween.Sequence();
+        seq.SetUpdate(true);
+		seq.Append(_rectTransform.DOAnchorPosY(1200, 0.2f));
+
+        return seq;
+    }
 }
