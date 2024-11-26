@@ -12,7 +12,9 @@ public class MovementCompo : MonoBehaviour, IAfterInitComponent
 
     private StatElement _speedStat;
 
-    public void Initialize(Entity entity)
+    public event Action OnMoveEndEvent;
+
+	public void Initialize(Entity entity)
     {
         _owner = entity as Unit;
         _rigid = GetComponent<Rigidbody2D>();
@@ -38,5 +40,6 @@ public class MovementCompo : MonoBehaviour, IAfterInitComponent
     public void StopImmediate()
     {
         _movement = Vector2.zero;
-    }
+        OnMoveEndEvent?.Invoke();
+	}
 }

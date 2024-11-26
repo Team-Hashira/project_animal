@@ -1,14 +1,14 @@
 using Crogen.CrogenPooling;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class UnitSpawnTower : Building, ISelectable
 {
     [Header("Spawn setting")]
     [SerializeField] private float _spawnDelay;
     [SerializeField] private bool _isEnable;
-    [SerializeField] private List<EnemyPoolType> _spawnList;
+    [SerializeField] private List<AllyPoolType> _spawnList;
 
     private bool _isShowBar;
     private float _currentSpawnTime;
@@ -32,7 +32,7 @@ public class UnitSpawnTower : Building, ISelectable
         //_spawnList = new List<EnemyPoolType>();
         _workBarCompo = GetCompo<WorkBarCompo>();
         _isShowBar = false;
-        _isEnable = false;
+        _isEnable = true;
     }
 
     protected override void Update()
@@ -70,7 +70,7 @@ public class UnitSpawnTower : Building, ISelectable
 
     private void Spawn()
     {
-        Vector2 randomPos = Random.insideUnitSphere;
+        Vector2 randomPos = UnityEngine.Random.insideUnitSphere;
         gameObject.Pop(_spawnList[0], transform.position + (Vector3)randomPos, Quaternion.identity);
         _spawnList.RemoveAt(0);
     }

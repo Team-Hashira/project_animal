@@ -14,8 +14,6 @@ public class AllyPig : Ally
     //Compo
     private HealthCompo _healthCompo;
 
-    private bool _isSelected = false;
-
     protected override void Awake()
     {
         base.Awake();

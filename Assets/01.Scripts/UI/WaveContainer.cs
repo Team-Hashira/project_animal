@@ -20,7 +20,6 @@ public class WaveContainer : MonoBehaviour
 
 	private void Start()
 	{
-		seq = DOTween.Sequence();
 		_waveManager = WaveManager.Instance;
 		_waveManager.OnGenerateStartEvent += HandleOnGenerateStart;
 		_waveManager.OnGenerateEndEvent += HandleOnGenerateEnd;
@@ -29,6 +28,7 @@ public class WaveContainer : MonoBehaviour
 
 	private void HandleOnGenerateStart()
 	{
+		seq ??= DOTween.Sequence();
 		seq.Kill();
 		_waveNumText.text = (_waveManager.WaveNumber+1).ToString();
 		_waveLogContent.DOFade(1, 0.2f);

@@ -10,7 +10,7 @@ public class SurfaceMovementCompo : MonoBehaviour, IAfterInitComponent
 	private Transform _targetTrm;
 
 	public Vector2 MoveDirection { get; private set; }
-
+	public event Action OnMoveEndEvent;
 	private FindTargetCompo _findTargetCompo;
 
 	private void Update()
@@ -33,6 +33,7 @@ public class SurfaceMovementCompo : MonoBehaviour, IAfterInitComponent
 	{
 		_agent.Warp(transform.position);
 		_agent.isStopped = false;
+		OnMoveEndEvent?.Invoke();
 	}
 
 	public void SetDestination(Vector2 destination)

@@ -64,7 +64,7 @@ public class SelectRect : MonoBehaviour
         //드래그일 때 실행되는 코드
         if (Physics2D.OverlapBox(transform.position, transform.localScale, 0, _whatIsTarget, _colliders) <= 0)
         {
-            _colliders.Except(_selectedCollList).ToList().ForEach(coll =>
+            _colliders.ToList().ForEach(coll =>
             {
                 if (coll == null) return;
                 if (coll.TryGetComponent(out ISelectable selectable))

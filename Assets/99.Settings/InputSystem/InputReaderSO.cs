@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public enum EControlsType
 {
@@ -14,9 +15,10 @@ public class InputReaderSO : ScriptableObject, Controls.IPlayerActions
     private Controls _controls;
 
     #region Actions
-    public Action<Vector2> OnMoveEvnet;
-    public Action<bool> OnLeftClickEvnet;
-    public Action<bool> OnRightClickEvnet;
+    public event Action<Vector2> OnMoveEvnet;
+    public event Action<bool> OnLeftClickEvnet;
+	public event Action<bool> OnRightClickEvnet;
+    public event Action<Vector2> OnMouseMoveEvent;
     #endregion
 
     #region Values
@@ -46,7 +48,8 @@ public class InputReaderSO : ScriptableObject, Controls.IPlayerActions
 
     public void OnMousePos(InputAction.CallbackContext context)
     {
-        MousePosition = context.ReadValue<Vector2>();
+		OnMouseMoveEvent?.Invoke(context.ReadValue<Vector2>());
+		MousePosition = context.ReadValue<Vector2>();
     }
 
     public void OnLeftClick(InputAction.CallbackContext context)

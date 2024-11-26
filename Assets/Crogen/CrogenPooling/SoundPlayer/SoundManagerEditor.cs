@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
-
+#if UNITY_EDITOR
 namespace Crogen.CrogenPooling.SoundPlayer
 {
     [CustomEditor(typeof(SoundManager))]
@@ -120,3 +120,4 @@ namespace Crogen.CrogenPooling.SoundPlayer
         }
     }
 }
+#endif
