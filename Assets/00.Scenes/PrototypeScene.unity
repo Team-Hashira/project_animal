@@ -1159,18 +1159,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 375683600}
     m_Modifications:
-    - target: {fileID: 445617216960655759, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 445617216960655759, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 333
-      objectReference: {fileID: 0}
-    - target: {fileID: 445617216960655759, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 62
-      objectReference: {fileID: 0}
     - target: {fileID: 1278949554300160478, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1251,45 +1239,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3114033436520923688, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3114033436520923688, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 9199434168132538835, guid: 1e4e4cbab6b997847b83e216d0610e22, type: 3}
-    - target: {fileID: 3114033436520923688, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4177462261997285414, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
       propertyPath: m_Name
       value: SkillUpgradeSlot
-      objectReference: {fileID: 0}
-    - target: {fileID: 7001868351600684671, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 168.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7001868351600684671, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -222
-      objectReference: {fileID: 0}
-    - target: {fileID: 9095385998250050126, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9095385998250050126, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9095385998250050126, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
-      propertyPath: m_fontColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9095385998250050126, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

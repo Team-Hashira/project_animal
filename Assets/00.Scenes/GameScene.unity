@@ -1145,7 +1145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fadeDuration: 0.2
   _skillUIDataSO: {fileID: 11400000, guid: 9fc39f997117ab04ea4cc6ab3688b8cd, type: 2}
-  slots: []
+  _slots: []
 --- !u!225 &352624529
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1154,7 +1154,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352624526}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -2599,7 +2599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1278949554300160478, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 1278949554300160478, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2613,9 +2613,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3911860424814654171, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911860424814654171, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911860424814654171, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911860424814654171, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4177462261997285414, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
       propertyPath: m_Name
       value: SkillUpgradeSlot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697355114866939670, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697355114866939670, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697355114866939670, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697355114866939670, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5734466675748645022, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -80.99997
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001868351600684671, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -253
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024988579938975886, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -174
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4958,7 +5002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1278949554300160478, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 1278949554300160478, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4972,9 +5016,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3911860424814654171, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911860424814654171, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911860424814654171, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911860424814654171, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4177462261997285414, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
       propertyPath: m_Name
       value: SkillUpgradeSlot (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697355114866939670, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697355114866939670, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697355114866939670, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697355114866939670, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5734466675748645022, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -80.99997
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001868351600684671, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -253
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024988579938975886, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -174
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5055,7 +5143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1278949554300160478, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 1278949554300160478, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5069,9 +5157,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3911860424814654171, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911860424814654171, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911860424814654171, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911860424814654171, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4177462261997285414, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
       propertyPath: m_Name
       value: SkillUpgradeSlot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697355114866939670, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697355114866939670, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697355114866939670, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697355114866939670, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5734466675748645022, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -81
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001868351600684671, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -253
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024988579938975886, guid: 074474318fe52b041b304f9c31ffe1ca, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -174
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5819,10 +5951,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 265ad6051dcb556468478c955d01d7a6, type: 2}
   - {fileID: 11400000, guid: f4a26e2e9b115df4bbede73e5b82d8c4, type: 2}
   - {fileID: 11400000, guid: 80d9ed2ed15d7ff4bbe03b5059208475, type: 2}
+  - {fileID: 11400000, guid: 15333d88e538e004487052347f0dd08e, type: 2}
   poolingPairs:
-  - poolType: SoundPlayer
-    prefab: {fileID: 1598646136496023633, guid: 759661f82fd32e24eb329c60f21b235f, type: 3}
-    poolCount: 20
+  - poolType: PigUnit
+    prefab: {fileID: 6562140581478784511, guid: b9e5b08e897da1045880ff73744628ea, type: 3}
+    poolCount: 10
 --- !u!4 &1978738711
 Transform:
   m_ObjectHideFlags: 0
