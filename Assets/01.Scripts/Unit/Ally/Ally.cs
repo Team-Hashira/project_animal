@@ -1,11 +1,23 @@
+using Crogen.CrogenPooling;
 using System;
 using UnityEngine;
 
-public class Ally : Unit, ISelectable
+public class Ally : Unit, ISelectable, IPoolingObject
 {
 	private SurfaceMovementCompo _surfaceMovementCompo;
     private bool _isSelected;
     [SerializeField] private InputReaderSO _inputReaderSO;
+
+	public string OriginPoolType { get; set; }
+	GameObject IPoolingObject.gameObject { get; set; }
+
+	public void OnPop()
+	{
+	}
+
+	public void OnPush()
+	{
+	}
 
 	public void Select(bool onSelect)
     {

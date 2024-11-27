@@ -18,7 +18,7 @@ public class Entity : MonoBehaviour, IDamageable
     public void ApplyDamage(int attackCoefficient, EStatType baseStatType, StatCompo harmerStat)
     {
         //int damage = DamageCalculator.CalculateDamage(attackCoefficient, baseStatType, harmerStat, GetCompo<StatCompo>());
-        GetCompo<HealthCompo>().ApplyDamage(attackCoefficient + (int)harmerStat.GetValue(baseStatType));
+        GetCompo<HealthCompo>()?.ApplyDamage(attackCoefficient + (int)harmerStat.GetValue(baseStatType));
     }
 
     protected virtual void Awake()
@@ -28,7 +28,7 @@ public class Entity : MonoBehaviour, IDamageable
         _initCompo = GetComponentsInChildren<IInitComponent>().ToList();
         _afterInitCompo = GetComponentsInChildren<IAfterInitComponent>().ToList();
         _disposeCompo = GetComponentsInChildren<IDisposeComponent>().ToList();
-
+        
         _initCompo.ForEach(component => _compoDict.Add(component.GetType(), component));
 
         if (this is not IPoolingObject pooling)

@@ -8,7 +8,7 @@ public class SkillUpgradeContainer : MonoBehaviour
 {
 	[SerializeField] private float _fadeDuration = 0.2f;
 	[SerializeField] private SkillUIDataSO _skillUIDataSO;
-	[SerializeField] private SkillUpgradeSlot[] slots;
+	[SerializeField] private SkillUpgradeSlot[] _slots;
 
 	private SkillManager _skillManager;
 
@@ -22,18 +22,18 @@ public class SkillUpgradeContainer : MonoBehaviour
 	{
 		_canvasGroup = GetComponent<CanvasGroup>();
 		_rectTransform = transform as RectTransform;
-		_canvasGroup.alpha = 0;
+		_canvasGroup.alpha = 1;
 		_canvasGroup.blocksRaycasts = false;
 		_canvasGroup.interactable = false;
-		slots = GetComponentsInChildren<SkillUpgradeSlot>();
+		_slots = GetComponentsInChildren<SkillUpgradeSlot>();
 	}
 
 	private void Start()
 	{
 		_skillManager = SkillManager.Instance;
-		for (int i = 0; i < slots.Length; ++i)
+		for (int i = 0; i < _slots.Length; ++i)
 		{
-			slots[i].OnSelectedEndEvent += HandleSelectedEnd;
+			_slots[i].OnSelectedEndEvent += HandleSelectedEnd;
 		}
 
 		LevelManager.Instance.OnLevelUpEvent += HandleLevelUp;
@@ -52,6 +52,12 @@ public class SkillUpgradeContainer : MonoBehaviour
 			isOpenedSelectPanel=true;
 			Open();
 		}
+
+		if (Input.GetKeyDown(KeyCode.F))
+		{
+			Open();
+
+        }
 	}
 
 	public void HandleLevelUp(int _)
@@ -103,7 +109,7 @@ public class SkillUpgradeContainer : MonoBehaviour
 	{
 		for (int i = 0; i < curSkillTypes.Count; ++i)
 		{
-			slots[i].SetSkillInfo(
+			_slots[i].SetSkillInfo(
 				curSkillTypes[i],
 				_skillUIDataSO[curSkillTypes[i]]);
 		}
@@ -131,25 +137,34 @@ public class SkillUpgradeContainer : MonoBehaviour
 
 	private Sequence SetSkillUpgradeUI(bool isShow)
 	{
-		Sequence seq = DOTween.Sequence();
+        Sequence seq = DOTween.Sequence();
 		seq.SetUpdate(true);
-		if (isShow)
-		{
-			_canvasGroup.blocksRaycasts = true;
-			seq.AppendCallback(() => _rectTransform.anchoredPosition = new Vector2(0, -334f))
-				.AppendCallback(() => _canvasGroup.interactable = false)
-				.Append(_rectTransform.DOAnchorPosY(0, _fadeDuration))
-				.Join(_canvasGroup.DOFade(1, _fadeDuration))
-				.AppendCallback(() => _canvasGroup.interactable = true);
 
+
+		if (isShow)
+        {
+            _canvasGroup.blocksRaycasts = true;
+			_canvasGroup.interactable = false;
+            seq.AppendCallback(() => _slots[1].Show())
+                .AppendInterval(0.07f)
+                .AppendCallback(() => _slots[0].Show())
+                .AppendInterval(0.07f)
+                .AppendCallback(() =>
+                {
+					_slots[2].Show()
+						.AppendCallback(() => _canvasGroup.interactable = true);
+    
+                });
 		}
 		else
-		{
-			_canvasGroup.blocksRaycasts = false;
-			seq.AppendCallback(() => _rectTransform.anchoredPosition = Vector2.zero)
-				.AppendCallback(() => _canvasGroup.interactable = false)
-				.Append(_rectTransform.DOAnchorPosY(-334f, _fadeDuration))
-				.Join(_canvasGroup.DOFade(0, _fadeDuration));
+        {
+            _canvasGroup.blocksRaycasts = false;
+            _canvasGroup.interactable = false;
+            seq.AppendCallback(() => _slots[1].Hide())
+                .AppendInterval(0.05f)
+                .AppendCallback(() => _slots[0].Hide())
+                .AppendInterval(0.05f)
+                .AppendCallback(() => _slots[2].Hide());
 		}
 
 		return seq;

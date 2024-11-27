@@ -6,7 +6,7 @@ using UnityEngine;
 public class Unit : Entity
 {
     protected StateMachine _stateMachine;
-
+    [field:SerializeField] public Transform VisualPivotTrm { get; private set; }
     protected override void Awake()
     {
         base.Awake();

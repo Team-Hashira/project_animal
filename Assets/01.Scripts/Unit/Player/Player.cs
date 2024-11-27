@@ -13,15 +13,36 @@ public class Player : Unit
 
     [SerializeField] private Transform _targetArrow;
     [SerializeField] private DamageCaster2D _damageCaster;
+    private Transform _visualTrm;
+    private Vector3 _originScale;
 
     protected override void Awake()
     {
         base.Awake();
-        Input.OnLeftClickEvnet += HandleLeftClickEvent;
+        _visualTrm = transform.Find("VisualPivot/Visual");
+        _originScale = _visualTrm.localScale;
+		Input.OnLeftClickEvnet += HandleLeftClickEvent;
+		Input.OnMouseMoveEvent += HandleMouseMoveEvent;
         _damageCaster.OnDamageCastSuccessEvent += HandleAttackSuccessEvent;
     }
 
-    private void HandleAttackSuccessEvent()
+	private void Start()
+	{
+        GetCompo<HealthCompo>().OnDieEvent += GameManager.Instance.GameOver;
+	}
+
+	private void HandleMouseMoveEvent(Vector2 pos)
+	{
+        pos = Camera.main.ScreenToWorldPoint(pos);
+        Vector2 dir = (pos - (Vector2)transform.position).normalized;
+        _visualTrm.localScale = 
+            new Vector3(-Mathf.Sign(dir.x) * 
+            _originScale.x,
+            _originScale.y,
+			_originScale.z);
+	}
+
+	private void HandleAttackSuccessEvent()
     {
         CameraManager.Instance.ShakeCamera(3, 3, 0.1f);
     }
