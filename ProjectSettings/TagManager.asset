@@ -38,6 +38,9 @@ TagManager:
   - 
   - Minimap
   m_SortingLayers:
+  - name: Minimap
+    uniqueID: 44953841
+    locked: 0
   - name: Background
     uniqueID: 10792453
     locked: 0

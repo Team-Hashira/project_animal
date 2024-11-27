@@ -21,11 +21,26 @@ MonoBehaviour:
         keys:
         - globalObjectIdString: GlobalObjectId_V1-2-d245a75582b3a16498c2941a8015ec3f-505914887-0
         - globalObjectIdString: GlobalObjectId_V1-2-d245a75582b3a16498c2941a8015ec3f-538685182-0
+        - globalObjectIdString: GlobalObjectId_V1-2-d245a75582b3a16498c2941a8015ec3f-1563147841-0
+        - globalObjectIdString: GlobalObjectId_V1-2-d245a75582b3a16498c2941a8015ec3f-1256721333-0
+        - globalObjectIdString: GlobalObjectId_V1-2-d245a75582b3a16498c2941a8015ec3f-1460310044-0
+        - globalObjectIdString: GlobalObjectId_V1-2-d245a75582b3a16498c2941a8015ec3f-810508102-0
+        - globalObjectIdString: GlobalObjectId_V1-2-d245a75582b3a16498c2941a8015ec3f-688096953-0
         values:
         - colorIndex: 2
           iconNameOrGuid: Settings Icon
         - colorIndex: 3
           iconNameOrGuid: Camera Icon
+        - colorIndex: 3
+          iconNameOrGuid: 
+        - colorIndex: 2
+          iconNameOrGuid: 
+        - colorIndex: 1
+          iconNameOrGuid: 
+        - colorIndex: 9
+          iconNameOrGuid: 
+        - colorIndex: 7
+          iconNameOrGuid: 
     - goDatas_byGlobalId:
         keys:
         - globalObjectIdString: GlobalObjectId_V1-2-3f8f6780bd566064494b732f464adb8e-505914887-0
